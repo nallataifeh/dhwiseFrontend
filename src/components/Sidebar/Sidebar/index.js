@@ -1,8 +1,27 @@
 import React from "react";
 
 import { Column, Img, Button } from "components";
+import { useNavigate } from "react-router-dom";
 
 const Sidebar = (props) => {
+  const navigate = useNavigate();
+
+  function handleNavigate() {
+    navigate("/settings");
+  }
+  function handleNavigate1() {
+    navigate("/myprofile");
+  }
+  function handleNavigate2() {
+    navigate("/messages");
+  }
+  function handleNavigate3() {
+    navigate("/homevone");
+  }
+  function handleNavigate4() {
+    navigate("/stories");
+  }
+
   return (
     <>
       <aside className={props.className}>
@@ -14,7 +33,8 @@ const Sidebar = (props) => {
               alt="settings"
             />
             <Button
-              className="flex items-center justify-center 2xl:mt-[101px] 3xl:mt-[121px] lg:mt-[71px] xl:mt-[89px] mail_One1"
+              className="common-pointer flex items-center justify-center 2xl:mt-[101px] 3xl:mt-[121px] lg:mt-[71px] xl:mt-[89px] mail_One1"
+              onClick={handleNavigate3}
               shape="icbRoundedBorder12"
               size="mdIcn"
               variant="icbFillWhiteA700"
@@ -26,7 +46,8 @@ const Sidebar = (props) => {
               />
             </Button>
             <Button
-              className="flex items-center justify-center lg:mt-[28px] xl:mt-[35px] 2xl:mt-[40px] 3xl:mt-[48px] mail_One1"
+              className="common-pointer flex items-center justify-center lg:mt-[28px] xl:mt-[35px] 2xl:mt-[40px] 3xl:mt-[48px] mail_One1"
+              onClick={handleNavigate4}
               shape="icbRoundedBorder12"
               size="mdIcn"
               variant="icbFillWhiteA70033"
@@ -38,7 +59,8 @@ const Sidebar = (props) => {
               />
             </Button>
             <Button
-              className="flex items-center justify-center lg:mt-[28px] xl:mt-[35px] 2xl:mt-[40px] 3xl:mt-[48px] mail_One1"
+              className="common-pointer flex items-center justify-center lg:mt-[28px] xl:mt-[35px] 2xl:mt-[40px] 3xl:mt-[48px] mail_One1"
+              onClick={handleNavigate2}
               shape="icbRoundedBorder12"
               size="mdIcn"
               variant="icbFillWhiteA70033"
@@ -50,7 +72,8 @@ const Sidebar = (props) => {
               />
             </Button>
             <Button
-              className="flex items-center justify-center lg:mt-[28px] xl:mt-[35px] 2xl:mt-[40px] 3xl:mt-[48px] mail_One1"
+              className="common-pointer flex items-center justify-center lg:mt-[28px] xl:mt-[35px] 2xl:mt-[40px] 3xl:mt-[48px] mail_One1"
+              onClick={handleNavigate1}
               shape="icbRoundedBorder12"
               size="mdIcn"
               variant="icbFillWhiteA70033"
@@ -62,7 +85,8 @@ const Sidebar = (props) => {
               />
             </Button>
             <Button
-              className="flex items-center justify-center lg:mt-[28px] xl:mt-[35px] 2xl:mt-[40px] 3xl:mt-[48px] mail_One1"
+              className="common-pointer flex items-center justify-center lg:mt-[28px] xl:mt-[35px] 2xl:mt-[40px] 3xl:mt-[48px] mail_One1"
+              onClick={handleNavigate}
               shape="icbRoundedBorder12"
               size="mdIcn"
               variant="icbFillWhiteA70033"

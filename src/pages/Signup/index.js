@@ -1,8 +1,52 @@
 import React from "react";
 
 import { Stack, Column, Text, Button, Row, Img, Input } from "components";
+import * as yup from "yup";
+import { useNavigate } from "react-router-dom";
+import { post } from "service/api";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import useForm from "hooks/useForm";
 
 const SignupPage = () => {
+  const [apiData, setapiData] = React.useState();
+  const formValidationSchema = yup
+    .object()
+    .shape({
+      email: yup
+        .string()
+        .required("Email is required")
+        .email("Please enter valid email"),
+      password: yup.string().required("Password is required"),
+    });
+  const form = useForm(
+    { email: "", userName: "", password: "" },
+    {
+      validate: true,
+      validateSchema: formValidationSchema,
+      validationOnChange: true,
+    }
+  );
+  const navigate = useNavigate();
+
+  function callApi(data) {
+    const req = { data: { ...data } };
+
+    post(req)
+      .then((res) => {
+        setapiData(res);
+
+        navigate("/homevone");
+      })
+      .catch((err) => {
+        console.error(err);
+        toast.error("eroor");
+      });
+  }
+  function handleNavigate6() {
+    navigate("/login");
+  }
+
   return (
     <>
       <Stack className="bg-gray_100 font-inter 2xl:h-[1025px] 3xl:h-[1230px] lg:h-[729px] xl:h-[911px] mx-[auto] w-[100%]">
@@ -17,7 +61,8 @@ const SignupPage = () => {
             Already have an account?
           </Text>
           <Button
-            className="font-bold xl:mb-[115px] 2xl:mb-[130px] 3xl:mb-[156px] lg:mb-[92px] lg:mt-[21px] xl:mt-[26px] 2xl:mt-[30px] 3xl:mt-[36px] xl:text-[12px] 2xl:text-[14px] 3xl:text-[16px] lg:text-[9px] text-center w-[100%]"
+            className="common-pointer font-bold xl:mb-[115px] 2xl:mb-[130px] 3xl:mb-[156px] lg:mb-[92px] lg:mt-[21px] xl:mt-[26px] 2xl:mt-[30px] 3xl:mt-[36px] xl:text-[12px] 2xl:text-[14px] 3xl:text-[16px] lg:text-[9px] text-center w-[100%]"
+            onClick={handleNavigate6}
             shape="CircleBorder29"
             size="xl"
             variant="FillIndigoA200"
@@ -53,6 +98,10 @@ const SignupPage = () => {
                 <Input
                   className="placeholder:text-gray_500 Group1405"
                   wrapClassName="2xl:mt-[14px] 3xl:mt-[16px] lg:mt-[9px] w-[100%] xl:mt-[12px]"
+                  onChange={(e) => {
+                    form.handleChange("userName", e.target.value);
+                  }}
+                  value={form?.values?.userName}
                   name="Group1405"
                   placeholder="Anne Carry"
                   shape="RoundedBorder8"
@@ -67,6 +116,11 @@ const SignupPage = () => {
                   className="placeholder:text-gray_500 email"
                   wrapClassName="2xl:mt-[14px] 3xl:mt-[16px] flex lg:mt-[9px] w-[100%] xl:mt-[12px]"
                   type="email"
+                  onChange={(e) => {
+                    form.handleChange("email", e.target.value);
+                  }}
+                  errors={form?.errors?.email}
+                  value={form?.values?.email}
                   name="email"
                   placeholder="anne.carry@mail.com"
                   suffix={
@@ -88,6 +142,11 @@ const SignupPage = () => {
                   className="placeholder:text-gray_500 email"
                   wrapClassName="2xl:mt-[14px] 3xl:mt-[16px] flex lg:mt-[9px] w-[100%] xl:mt-[12px]"
                   type="password"
+                  onChange={(e) => {
+                    form.handleChange("password", e.target.value);
+                  }}
+                  errors={form?.errors?.password}
+                  value={form?.values?.password}
                   name="Group1403"
                   placeholder="Password@123"
                   suffix={
@@ -103,7 +162,10 @@ const SignupPage = () => {
               </Column>
             </Column>
             <Button
-              className="font-bold lg:ml-[54px] xl:ml-[67px] 2xl:ml-[76px] 3xl:ml-[91px] lg:mt-[28px] xl:mt-[35px] 2xl:mt-[40px] 3xl:mt-[48px] xl:text-[12px] 2xl:text-[14px] 3xl:text-[16px] lg:text-[9px] text-center w-[64%]"
+              className="common-pointer font-bold lg:ml-[54px] xl:ml-[67px] 2xl:ml-[76px] 3xl:ml-[91px] lg:mt-[28px] xl:mt-[35px] 2xl:mt-[40px] 3xl:mt-[48px] xl:text-[12px] 2xl:text-[14px] 3xl:text-[16px] lg:text-[9px] text-center w-[64%]"
+              onClick={() => {
+                form.handleSubmit(callApi);
+              }}
               shape="CircleBorder29"
               size="xl"
               variant="FillIndigoA200"
@@ -164,6 +226,8 @@ const SignupPage = () => {
           </Column>
         </Row>
       </Stack>
+
+      <ToastContainer />
     </>
   );
 };

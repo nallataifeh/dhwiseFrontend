@@ -8,7 +8,7 @@ export const Img = ({
 }) => {
   return (
     <img
-      className={`${className} common-image`}
+      className={className}
       src={src}
       alt={alt}
       {...restProps}

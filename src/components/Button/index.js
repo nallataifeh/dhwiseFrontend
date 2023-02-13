@@ -44,14 +44,21 @@ const variants = {
   icbOutlineGray50066: "border-2 border-gray_500_66 border-solid",
 };
 const sizes = {
-  sm: "lg:p-[3px] xl:p-[4px] p-[5px] 3xl:p-[6px]",
-  md: "lg:p-[5px] xl:p-[7px] p-[8px] 3xl:p-[9px]",
-  lg: "xl:p-[10px] p-[12px] 3xl:p-[14px] lg:p-[8px]",
-  xl: "lg:p-[15px] xl:p-[19px] p-[22px] 3xl:p-[26px]",
-  smIcn: "lg:p-[4px] xl:p-[6px] p-[7px] 3xl:p-[8px]",
-  mdIcn: "p-[11px] 3xl:p-[13px] lg:p-[7px] xl:p-[9px]",
-  lgIcn: "lg:p-[10px] xl:p-[13px] p-[15px] 3xl:p-[18px]",
-  xlIcn: "lg:p-[14px] xl:p-[17px] p-[20px] 3xl:p-[24px]",
+  sm: "p-[4px]",
+  md: "pl-[5px] py-[5px]",
+  lg: "pr-[5px] py-[5px]",
+  xl: "pr-[8px] py-[8px]",
+  "2xl": "pr-[5px] py-[8px]",
+  "3xl": "pl-[8px] pr-[5px] py-[8px]",
+  "4xl": "p-[9px]",
+  "5xl": "p-[12px]",
+  "6xl": "px-[9px] py-[12px]",
+  "7xl": "sm:pr-[20px] pr-[21px] py-[21px]",
+  "8xl": "p-[22px] sm:px-[20px]",
+  smIcn: "p-[7px]",
+  mdIcn: "p-[11px]",
+  lgIcn: "p-[15px]",
+  xlIcn: "p-[20px]",
 };
 
 const Button = ({
@@ -68,7 +75,7 @@ const Button = ({
     <button
       className={`${className} ${shapes[shape] || ""} ${
         variants[variant] || ""
-      } ${sizes[size] || ""} common-button `}
+      } ${sizes[size] || ""} `}
       {...restProps}
     >
       {!!leftIcon && leftIcon}
@@ -128,6 +135,13 @@ Button.propTypes = {
     "md",
     "lg",
     "xl",
+    "2xl",
+    "3xl",
+    "4xl",
+    "5xl",
+    "6xl",
+    "7xl",
+    "8xl",
     "smIcn",
     "mdIcn",
     "lgIcn",

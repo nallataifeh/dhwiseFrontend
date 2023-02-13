@@ -1,359 +1,415 @@
 import React from "react";
 
-import {
-  Column,
-  Row,
-  Text,
-  Img,
-  Button,
-  Grid,
-  Input,
-  Line,
-  Stack,
-} from "components";
-import Sidebar from "components/Sidebar/Sidebar";
+import Sidebar from "components/Sidebar";
+import { Text, Img, Button, Input, Line } from "components";
 
 const SettingsPage = () => {
   return (
     <>
-      <Column className="bg-gray_100 font-inter items-center justify-start mx-[auto] w-[100%]">
-        <Row className="items-center justify-between w-[100%]">
-          <Row className="items-center justify-between w-[60%]">
-            <Sidebar className="w-[19%]" />
-            <Column className="w-[73%]">
-              <Text className="text-gray_900 w-[auto]" as="h3" variant="h3">
+      <div className="bg-gray_100 flex flex-col font-inter items-center justify-start mx-[auto] w-[100%]">
+        <div className="flex md:flex-col sm:flex-col flex-row md:gap-[40px] sm:gap-[40px] items-center justify-between w-[100%]">
+          <div className="flex md:flex-1 sm:flex-1 md:flex-col sm:flex-col flex-row md:gap-[40px] sm:gap-[40px] items-center justify-between md:px-[20px] sm:px-[20px] md:w-[100%] sm:w-[100%] w-[auto]">
+            <Sidebar className="flex flex-col md:hidden sm:hidden w-[165px]" />
+            <div className="flex flex-1 flex-col items-start justify-start w-[100%]">
+              <Text
+                className="text-gray_900 text-left w-[auto]"
+                as="h3"
+                variant="h3"
+              >
                 Account Informations
               </Text>
-              <Row className="items-center lg:mt-[45px] xl:mt-[56px] 2xl:mt-[64px] 3xl:mt-[76px] w-[85%]">
+              <div className="flex sm:flex-col flex-row gap-[30px] items-center justify-start mt-[64px] md:w-[100%] sm:w-[100%] w-[86%]">
                 <Img
                   src="images/img_avatar.png"
-                  className="xl:h-[114px] 2xl:h-[129px] 3xl:h-[154px] lg:h-[92px] rounded-radius36 xl:w-[113px] 2xl:w-[128px] 3xl:w-[153px] lg:w-[91px]"
+                  className="h-[128px] md:h-[auto] sm:h-[auto] object-cover rounded-radius36 w-[128px]"
                   alt="Avatar"
                 />
-                <Column className="lg:ml-[21px] xl:ml-[26px] 2xl:ml-[30px] 3xl:ml-[36px] w-[71%]">
-                  <Text className="text-gray_500 w-[auto]" as="h4" variant="h4">
+                <div className="flex flex-col gap-[23px] items-start justify-start sm:w-[100%] w-[71%]">
+                  <Text
+                    className="text-gray_500 text-left w-[auto]"
+                    as="h4"
+                    variant="h4"
+                  >
                     Profile Picture
                   </Text>
-                  <Row className="items-center justify-between lg:mt-[16px] xl:mt-[20px] 2xl:mt-[23px] 3xl:mt-[27px] w-[100%]">
+                  <div className="flex flex-row gap-[20px] items-center justify-between w-[100%]">
                     <Button
-                      className="font-bold font-inter xl:text-[12px] 2xl:text-[14px] 3xl:text-[16px] lg:text-[9px] text-center w-[47%]"
+                      className="cursor-pointer font-bold font-inter min-w-[180px] text-[14px] text-center text-white_A700 w-[auto]"
                       shape="CircleBorder29"
-                      size="xl"
+                      size="8xl"
                       variant="FillLightblue200"
                     >
                       Replace
                     </Button>
                     <Button
-                      className="flex items-center justify-center text-center w-[47%]"
+                      className="flex items-center justify-center text-center"
                       leftIcon={
                         <Img
                           src="images/img_trash_18X18.svg"
-                          className="text-center lg:w-[12px] lg:h-[13px] lg:mr-[4px] xl:w-[16px] xl:h-[17px] xl:mr-[6px] 2xl:w-[18px] 2xl:h-[19px] 2xl:mr-[7px] 3xl:w-[21px] 3xl:h-[22px] 3xl:mr-[8px]"
+                          className="mr-[7px] text-center"
                           alt="trash"
                         />
                       }
                       shape="RoundedBorder12"
-                      size="xl"
+                      size="7xl"
                       variant="OutlineGray50066"
                     >
-                      <div className="bg-transparent font-bold font-sfprodisplay xl:text-[12px] 2xl:text-[14px] 3xl:text-[16px] lg:text-[9px] text-red_A200">
+                      <div className="bg-transparent cursor-pointer font-bold font-sfprodisplay text-[14px] text-left text-red_A200">
                         Delete
                       </div>
                     </Button>
-                  </Row>
-                </Column>
-              </Row>
+                  </div>
+                </div>
+              </div>
               <Text
-                className="lg:mt-[44px] xl:mt-[55px] 2xl:mt-[62px] 3xl:mt-[74px] text-gray_500 w-[auto]"
+                className="mt-[62px] text-gray_500 text-left w-[auto]"
                 as="h4"
                 variant="h4"
               >
                 Basic Information
               </Text>
-              <Grid className="lg:gap-[21px] xl:gap-[26px] 2xl:gap-[30px] 3xl:gap-[36px] grid grid-cols-2 lg:mt-[25px] xl:mt-[32px] 2xl:mt-[36px] 3xl:mt-[43px] w-[100%]">
-                <Column className="justify-start w-[100%]">
-                  <Text className="columnlabel" as="h6" variant="h6">
+              <div className="md:gap-[20px] sm:gap-[20px] gap-[30px] grid md:grid-cols-1 sm:grid-cols-1 grid-cols-2 justify-center min-h-[auto] mt-[36px] w-[100%]">
+                <div className="flex flex-1 flex-col gap-[14px] items-start justify-start w-[100%]">
+                  <Text
+                    className="font-bold text-gray_900 text-left tracking-ls1 uppercase w-[auto]"
+                    as="h6"
+                    variant="h6"
+                  >
                     name
                   </Text>
                   <Input
-                    className="placeholder:text-gray_500 Group1405"
-                    wrapClassName="2xl:mt-[14px] 3xl:mt-[16px] lg:mt-[9px] w-[100%] xl:mt-[12px]"
+                    className="font-medium p-[0] text-[14px] placeholder:text-gray_500 text-gray_500 text-left w-[100%]"
+                    wrapClassName="w-[100%]"
                     name="Group1445"
                     placeholder="Anne Carry"
                     shape="RoundedBorder8"
+                    size="3xl"
                   ></Input>
-                </Column>
-                <Column className="justify-start w-[100%]">
-                  <Text className="columnlabel" as="h6" variant="h6">
+                </div>
+                <div className="flex flex-1 flex-col gap-[14px] items-start justify-start w-[100%]">
+                  <Text
+                    className="font-bold text-gray_900 text-left tracking-ls1 uppercase w-[auto]"
+                    as="h6"
+                    variant="h6"
+                  >
                     username
                   </Text>
                   <Input
-                    className="placeholder:text-gray_500 email"
-                    wrapClassName="2xl:mt-[14px] 3xl:mt-[16px] flex lg:mt-[9px] w-[100%] xl:mt-[12px]"
+                    className="font-medium p-[0] text-[14px] placeholder:text-gray_500 text-gray_500 text-left w-[100%]"
+                    wrapClassName="flex w-[100%]"
                     name="Group1444"
                     placeholder="annecarry"
                     suffix={
                       <Img
                         src="images/img_television.svg"
-                        className="mr-[1px] lg:w-[12px] lg:h-[13px] lg:ml-[24px] xl:w-[16px] xl:h-[17px] xl:ml-[31px] 2xl:w-[18px] 2xl:h-[19px] 2xl:ml-[35px] 3xl:w-[21px] 3xl:h-[22px] 3xl:ml-[42px] my-[auto]"
+                        className="ml-[35px] my-[auto]"
                         alt="television"
                       />
                     }
                     shape="RoundedBorder8"
                   ></Input>
-                </Column>
-                <Column className="justify-start w-[100%]">
-                  <Text className="columnlabel" as="h6" variant="h6">
+                </div>
+                <div className="flex flex-1 flex-col gap-[14px] items-start justify-start w-[100%]">
+                  <Text
+                    className="font-bold text-gray_900 text-left tracking-ls1 uppercase w-[auto]"
+                    as="h6"
+                    variant="h6"
+                  >
                     Email
                   </Text>
                   <Input
-                    className="placeholder:text-gray_500 Group1405"
-                    wrapClassName="2xl:mt-[14px] 3xl:mt-[16px] lg:mt-[9px] w-[100%] xl:mt-[12px]"
+                    className="font-medium p-[0] text-[14px] placeholder:text-gray_500 text-gray_500 text-left w-[100%]"
+                    wrapClassName="w-[100%]"
                     name="email"
                     placeholder="anne.carry@mail.com"
                     shape="RoundedBorder8"
+                    size="3xl"
                   ></Input>
-                </Column>
-                <Column className="justify-start w-[100%]">
-                  <Text className="columnlabel" as="h6" variant="h6">
+                </div>
+                <div className="flex flex-1 flex-col gap-[14px] items-start justify-start w-[100%]">
+                  <Text
+                    className="font-bold text-gray_900 text-left tracking-ls1 uppercase w-[auto]"
+                    as="h6"
+                    variant="h6"
+                  >
                     birthday
                   </Text>
                   <Input
-                    className="placeholder:text-gray_500 email"
-                    wrapClassName="2xl:mt-[14px] 3xl:mt-[16px] flex lg:mt-[9px] w-[100%] xl:mt-[12px]"
+                    className="font-medium p-[0] text-[14px] placeholder:text-gray_500 text-gray_500 text-left w-[100%]"
+                    wrapClassName="flex w-[100%]"
                     name="month"
                     placeholder="January 25, 1991"
                     suffix={
                       <Img
                         src="images/img_checkmark_18X18.svg"
-                        className="mr-[1px] lg:w-[12px] lg:h-[13px] lg:ml-[24px] xl:w-[16px] xl:h-[17px] xl:ml-[31px] 2xl:w-[18px] 2xl:h-[19px] 2xl:ml-[35px] 3xl:w-[21px] 3xl:h-[22px] 3xl:ml-[42px] my-[auto]"
+                        className="ml-[35px] my-[auto]"
                         alt="checkmark"
                       />
                     }
                     shape="RoundedBorder8"
                   ></Input>
-                </Column>
-              </Grid>
-              <Line className="bg-gray_500_6c h-[1px] lg:mt-[28px] xl:mt-[35px] 2xl:mt-[40px] 3xl:mt-[48px] w-[100%]" />
-              <Row className="items-center justify-evenly lg:mt-[30px] xl:mt-[38px] 2xl:mt-[43px] 3xl:mt-[51px] w-[100%]">
-                <Column className="w-[52%]">
-                  <Text className="columnlabel" as="h6" variant="h6">
+                </div>
+              </div>
+              <Line className="bg-gray_500_6c h-[1px] mt-[40px] w-[100%]" />
+              <div className="flex md:flex-col sm:flex-col flex-row md:gap-[20px] sm:gap-[20px] items-center justify-evenly mt-[43px] w-[100%]">
+                <div className="flex md:flex-1 sm:flex-1 flex-col gap-[14px] items-start justify-start md:w-[100%] sm:w-[100%] w-[53%]">
+                  <Text
+                    className="font-bold text-gray_900 text-left tracking-ls1 uppercase w-[auto]"
+                    as="h6"
+                    variant="h6"
+                  >
                     Country
                   </Text>
                   <Input
-                    className="placeholder:text-gray_500 email"
-                    wrapClassName="2xl:mt-[14px] 3xl:mt-[16px] flex lg:mt-[9px] w-[91%] xl:mt-[12px]"
+                    className="font-medium p-[0] text-[14px] placeholder:text-gray_500 text-gray_500 text-left w-[100%]"
+                    wrapClassName="flex sm:w-[100%] w-[91%]"
                     name="Group1440"
                     placeholder="United States"
                     suffix={
                       <Img
                         src="images/img_checkmark_18X18.svg"
-                        className="mr-[1px] lg:w-[12px] lg:h-[13px] lg:ml-[24px] xl:w-[16px] xl:h-[17px] xl:ml-[31px] 2xl:w-[18px] 2xl:h-[19px] 2xl:ml-[35px] 3xl:w-[21px] 3xl:h-[22px] 3xl:ml-[42px] my-[auto]"
+                        className="ml-[35px] my-[auto]"
                         alt="checkmark"
                       />
                     }
                     shape="RoundedBorder8"
-                    size="xl"
+                    size="2xl"
                   ></Input>
-                </Column>
-                <Column className="w-[48%]">
-                  <Text className="columnlabel" as="h6" variant="h6">
+                </div>
+                <div className="flex md:flex-1 sm:flex-1 flex-col gap-[14px] items-start justify-start md:w-[100%] sm:w-[100%] w-[48%]">
+                  <Text
+                    className="font-bold text-gray_900 text-left tracking-ls1 uppercase w-[auto]"
+                    as="h6"
+                    variant="h6"
+                  >
                     state
                   </Text>
                   <Input
-                    className="placeholder:text-gray_500 email"
-                    wrapClassName="2xl:mt-[14px] 3xl:mt-[16px] flex lg:mt-[9px] w-[100%] xl:mt-[12px]"
+                    className="font-medium p-[0] text-[14px] placeholder:text-gray_500 text-gray_500 text-left w-[100%]"
+                    wrapClassName="flex w-[100%]"
                     name="Group1439"
                     placeholder="California"
                     suffix={
                       <Img
                         src="images/img_checkmark_18X18.svg"
-                        className="mr-[1px] lg:w-[12px] lg:h-[13px] lg:ml-[24px] xl:w-[16px] xl:h-[17px] xl:ml-[31px] 2xl:w-[18px] 2xl:h-[19px] 2xl:ml-[35px] 3xl:w-[21px] 3xl:h-[22px] 3xl:ml-[42px] my-[auto]"
+                        className="ml-[35px] my-[auto]"
                         alt="checkmark"
                       />
                     }
                     shape="RoundedBorder8"
-                    size="xl"
+                    size="2xl"
                   ></Input>
-                </Column>
-              </Row>
-              <Column className="justify-start lg:mt-[23px] xl:mt-[29px] 2xl:mt-[33px] 3xl:mt-[39px] w-[48%]">
-                <Text className="columnlabel" as="h6" variant="h6">
+                </div>
+              </div>
+              <div className="flex flex-col gap-[14px] items-start justify-start mt-[33px] md:w-[100%] sm:w-[100%] w-[48%]">
+                <Text
+                  className="font-bold text-gray_900 text-left tracking-ls1 uppercase w-[auto]"
+                  as="h6"
+                  variant="h6"
+                >
                   City
                 </Text>
                 <Input
-                  className="placeholder:text-gray_500 email"
-                  wrapClassName="2xl:mt-[14px] 3xl:mt-[16px] flex lg:mt-[9px] w-[100%] xl:mt-[12px]"
+                  className="font-medium p-[0] text-[14px] placeholder:text-gray_500 text-gray_500 text-left w-[100%]"
+                  wrapClassName="flex w-[100%]"
                   name="Group1441"
                   placeholder="San Francisco"
                   suffix={
                     <Img
                       src="images/img_checkmark_18X18.svg"
-                      className="mr-[1px] lg:w-[12px] lg:h-[13px] lg:ml-[24px] xl:w-[16px] xl:h-[17px] xl:ml-[31px] 2xl:w-[18px] 2xl:h-[19px] 2xl:ml-[35px] 3xl:w-[21px] 3xl:h-[22px] 3xl:ml-[42px] my-[auto]"
+                      className="ml-[35px] my-[auto]"
                       alt="checkmark"
                     />
                   }
                   shape="RoundedBorder8"
-                  size="xl"
+                  size="2xl"
                 ></Input>
-              </Column>
+              </div>
               <Button
-                className="font-bold lg:mt-[45px] xl:mt-[56px] 2xl:mt-[64px] 3xl:mt-[76px] xl:text-[12px] 2xl:text-[14px] 3xl:text-[16px] lg:text-[9px] text-center w-[29%]"
+                className="cursor-pointer font-bold min-w-[180px] mt-[64px] text-[14px] text-center text-white_A700 w-[auto]"
                 shape="CircleBorder29"
-                size="xl"
+                size="8xl"
                 variant="FillGreen400"
               >
                 Save Changes
               </Button>
-            </Column>
-          </Row>
-          <Row className="items-center lg:pl-[3px] xl:pl-[4px] 2xl:pl-[5px] 3xl:pl-[6px] w-[36%]">
-            <div className="bg-gray_500_7e xl:h-[114px] 2xl:h-[129px] 3xl:h-[154px] lg:h-[92px] rounded-radius2 w-[1%]"></div>
-            <Column className="bg-gray_900 2xl:ml-[10px] 3xl:ml-[12px] lg:ml-[7px] xl:ml-[8px] lg:p-[28px] xl:p-[35px] 2xl:p-[40px] 3xl:p-[48px] rounded-bl-[32px] rounded-br-[0] rounded-tl-[32px] rounded-tr-[0] w-[97%]">
-              <Stack className="lg:h-[35px] xl:h-[43px] 2xl:h-[49px] 3xl:h-[58px] lg:ml-[212px] xl:ml-[265px] 2xl:ml-[299px] 3xl:ml-[359px] lg:mt-[3px] xl:mt-[4px] 2xl:mt-[5px] 3xl:mt-[6px] w-[28%]">
+            </div>
+          </div>
+          <div className="flex md:flex-1 sm:flex-1 sm:flex-col flex-row gap-[10px] items-center justify-start pl-[5px] md:px-[20px] sm:px-[20px] md:w-[100%] sm:w-[100%] w-[auto]">
+            <div className="bg-gray_500_7e h-[128px] sm:mt-[0] my-[448px] rounded-radius2 w-[1%]"></div>
+            <div className="bg-gray_900 flex flex-col gap-[51px] justify-start p-[40px] sm:px-[20px] rounded-bl-[32px] rounded-br-[0] rounded-tl-[32px] rounded-tr-[0] sm:w-[100%] w-[98%]">
+              <div className="h-[48px] md:h-[53px] sm:h-[53px] md:ml-[0] sm:ml-[0] ml-[299px] mt-[5px] relative md:w-[100%] sm:w-[100%] w-[28%]">
                 <Img
                   src="images/img_group1436.png"
-                  className="absolute right-[0] Image_Eight"
+                  className="absolute h-[48px] inset-y-[0] my-[auto] object-cover right-[0] rounded-radius12 w-[48px]"
                   alt="Image"
                 />
-                <Column className="bg-light_blue_200 items-center justify-start xl:px-[11px] 2xl:px-[13px] 3xl:px-[15px] lg:px-[9px] Avatar9">
+                <div className="bg-light_blue_200 flex flex-col h-[100%] items-center justify-start my-[auto] p-[13px] rounded-radius12 w-[48px]">
                   <Text
-                    className="text-white_A700 w-[auto]"
+                    className="text-left text-white_A700 w-[auto]"
                     as="h3"
                     variant="h3"
                   >
                     1
                   </Text>
-                </Column>
-                <Row className="absolute font-sfprodisplay items-center justify-between w-[100%]">
+                </div>
+                <div className="absolute flex flex-row font-sfprodisplay gap-[20px] h-[max-content] inset-[0] items-center justify-center m-[auto] w-[100%]">
                   <Button
-                    className="font-bold lg:text-[15px] xl:text-[19px] 2xl:text-[22px] 3xl:text-[26px] text-center mail_One1"
+                    className="cursor-pointer font-bold h-[48px] sm:text-[18.32px] md:text-[20.32px] text-[22.32px] text-center text-white_A700 w-[48px]"
                     shape="RoundedBorder12"
-                    size="lg"
+                    size="5xl"
                     variant="FillLightblue200"
                   >
                     1
                   </Button>
                   <Img
                     src="images/img_avatar_48X48.png"
-                    className="Image_Eight"
+                    className="h-[48px] md:h-[auto] sm:h-[auto] object-cover rounded-radius12 w-[48px]"
                     alt="Avatar One"
                   />
-                </Row>
-              </Stack>
-              <Column className="justify-start lg:mb-[204px] xl:mb-[256px] 2xl:mb-[288px] 3xl:mb-[345px] lg:ml-[3px] xl:ml-[4px] 2xl:ml-[5px] 3xl:ml-[6px] lg:mr-[145px] xl:mr-[181px] 2xl:mr-[204px] 3xl:mr-[244px] lg:mt-[36px] xl:mt-[45px] 2xl:mt-[51px] 3xl:mt-[61px] w-[50%]">
-                <Text className="text-white_A700 w-[auto]" as="h3" variant="h3">
+                </div>
+              </div>
+              <div className="flex flex-col gap-[40px] items-start justify-start mb-[288px] md:ml-[0] sm:ml-[0] ml-[5px] mr-[204px] md:w-[100%] sm:w-[100%] w-[50%]">
+                <Text
+                  className="text-left text-white_A700 w-[auto]"
+                  as="h3"
+                  variant="h3"
+                >
                   Settings
                 </Text>
-                <Column className="font-sfprodisplay justify-start lg:mt-[28px] xl:mt-[35px] 2xl:mt-[40px] 3xl:mt-[48px] w-[100%]">
-                  <Row className="items-center w-[73%]">
+                <div className="flex flex-col font-sfprodisplay gap-[40px] items-start justify-start w-[100%]">
+                  <div className="flex flex-row gap-[15px] items-center justify-start md:w-[100%] sm:w-[100%] w-[74%]">
                     <Button
-                      className="flex items-center justify-center mail_One1"
+                      className="flex h-[48px] items-center justify-center w-[48px]"
                       shape="icbRoundedBorder12"
                       size="mdIcn"
                       variant="icbFillWhiteA700"
                     >
                       <Img
                         src="images/img_user_48X48.svg"
-                        className="flex items-center justify-center lg:h-[16px] xl:h-[20px] 2xl:h-[23px] 3xl:h-[27px]"
+                        className="h-[22px]"
                         alt="user One"
                       />
                     </Button>
-                    <Text className="Button" as="h4" variant="h4">
+                    <Text
+                      className="text-left text-white_A700 w-[auto]"
+                      as="h4"
+                      variant="h4"
+                    >
                       My Account
                     </Text>
-                  </Row>
-                  <Row className="items-center lg:mt-[28px] xl:mt-[35px] 2xl:mt-[40px] 3xl:mt-[48px] w-[76%]">
+                  </div>
+                  <div className="flex flex-row gap-[15px] items-center justify-start md:w-[100%] sm:w-[100%] w-[77%]">
                     <Button
-                      className="flex items-center justify-center mail_One1"
+                      className="flex h-[48px] items-center justify-center w-[48px]"
                       shape="icbRoundedBorder12"
                       size="mdIcn"
                       variant="icbOutlineGray50066"
                     >
                       <Img
                         src="images/img_notification.svg"
-                        className="flex items-center justify-center lg:h-[16px] xl:h-[20px] 2xl:h-[23px] 3xl:h-[27px]"
+                        className="h-[22px]"
                         alt="notification"
                       />
                     </Button>
-                    <Text className="Button" as="h4" variant="h4">
+                    <Text
+                      className="text-left text-white_A700 w-[auto]"
+                      as="h4"
+                      variant="h4"
+                    >
                       Notifications
                     </Text>
-                  </Row>
-                  <Row className="items-center lg:mt-[28px] xl:mt-[35px] 2xl:mt-[40px] 3xl:mt-[48px] w-[85%]">
+                  </div>
+                  <div className="flex flex-row gap-[15px] items-center justify-start md:w-[100%] sm:w-[100%] w-[85%]">
                     <Button
-                      className="flex items-center justify-center mail_One1"
+                      className="flex h-[48px] items-center justify-center w-[48px]"
                       shape="icbRoundedBorder12"
                       size="mdIcn"
                       variant="icbOutlineGray50066"
                     >
                       <Img
                         src="images/img_clock_48X48.svg"
-                        className="flex items-center justify-center lg:h-[16px] xl:h-[20px] 2xl:h-[23px] 3xl:h-[27px]"
+                        className="h-[22px]"
                         alt="clock"
                       />
                     </Button>
-                    <Text className="Button" as="h4" variant="h4">
+                    <Text
+                      className="text-left text-white_A700 w-[auto]"
+                      as="h4"
+                      variant="h4"
+                    >
                       Activity History
                     </Text>
-                  </Row>
-                  <Row className="items-center lg:mt-[28px] xl:mt-[35px] 2xl:mt-[40px] 3xl:mt-[48px] w-[100%]">
+                  </div>
+                  <div className="flex flex-row gap-[15px] items-center justify-start w-[100%]">
                     <Button
-                      className="flex items-center justify-center mail_One1"
+                      className="flex h-[48px] items-center justify-center w-[48px]"
                       shape="icbRoundedBorder12"
                       size="mdIcn"
                       variant="icbOutlineGray50066"
                     >
                       <Img
                         src="images/img_alarm_48X48.svg"
-                        className="flex items-center justify-center lg:h-[16px] xl:h-[20px] 2xl:h-[23px] 3xl:h-[27px]"
+                        className="h-[22px]"
                         alt="alarm"
                       />
                     </Button>
-                    <Text className="Button" as="h4" variant="h4">
+                    <Text
+                      className="text-left text-white_A700 w-[auto]"
+                      as="h4"
+                      variant="h4"
+                    >
                       Billing and Payment
                     </Text>
-                  </Row>
-                  <Row className="items-center lg:mt-[28px] xl:mt-[35px] 2xl:mt-[40px] 3xl:mt-[48px] w-[95%]">
+                  </div>
+                  <div className="flex flex-row gap-[15px] items-center justify-start md:w-[100%] sm:w-[100%] w-[96%]">
                     <Button
-                      className="flex items-center justify-center mail_One1"
+                      className="flex h-[48px] items-center justify-center w-[48px]"
                       shape="icbRoundedBorder12"
                       size="mdIcn"
                       variant="icbOutlineGray50066"
                     >
                       <Img
                         src="images/img_lock.svg"
-                        className="flex items-center justify-center lg:h-[16px] xl:h-[20px] 2xl:h-[23px] 3xl:h-[27px]"
+                        className="h-[22px]"
                         alt="lock"
                       />
                     </Button>
-                    <Text className="Button" as="h4" variant="h4">
+                    <Text
+                      className="text-left text-white_A700 w-[auto]"
+                      as="h4"
+                      variant="h4"
+                    >
                       Security & Privacy
                     </Text>
-                  </Row>
-                  <Row className="items-center lg:mt-[28px] xl:mt-[35px] 2xl:mt-[40px] 3xl:mt-[48px] w-[47%]">
+                  </div>
+                  <div className="flex flex-row gap-[15px] items-center justify-start md:w-[100%] sm:w-[100%] w-[48%]">
                     <Button
-                      className="flex items-center justify-center mail_One1"
+                      className="flex h-[48px] items-center justify-center w-[48px]"
                       shape="icbRoundedBorder12"
                       size="mdIcn"
                       variant="icbOutlineGray50066"
                     >
                       <Img
                         src="images/img_settings_1.svg"
-                        className="flex items-center justify-center lg:h-[16px] xl:h-[20px] 2xl:h-[23px] 3xl:h-[27px]"
+                        className="h-[22px]"
                         alt="settings Three"
                       />
                     </Button>
-                    <Text className="Button" as="h4" variant="h4">
+                    <Text
+                      className="text-left text-white_A700 w-[auto]"
+                      as="h4"
+                      variant="h4"
+                    >
                       Help
                     </Text>
-                  </Row>
-                </Column>
-              </Column>
-            </Column>
-          </Row>
-        </Row>
-      </Column>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   );
 };

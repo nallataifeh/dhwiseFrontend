@@ -1,78 +1,98 @@
 import React from "react";
 
-import { Stack, Column, Text, Button, Row, Img, Input } from "components";
+import { Text, Button, Img, Input } from "components";
 
 const PasswordRecoveryPage = () => {
   return (
     <>
-      <Stack className="bg-gray_100 font-inter 2xl:h-[1025px] 3xl:h-[1230px] lg:h-[729px] xl:h-[911px] mx-[auto] w-[100%]">
-        <Column
-          className="absolute bg-cover bg-repeat items-center justify-center left-[0] lg:p-[216px] xl:p-[271px] 2xl:p-[305px] 3xl:p-[366px] w-[58%]"
+      <div className="bg-gray_100 flex font-inter h-[1024px] mx-[auto] relative w-[100%]">
+        <div
+          className="bg-cover bg-no-repeat flex flex-col items-center justify-center my-[auto] p-[305px] md:px-[20px] sm:px-[20px] w-[58%]"
           style={{ backgroundImage: "url('images/img_group1513.png')" }}
         >
-          <Text className="Hello" as="h1" variant="h1">
+          <Text
+            className="mt-[133px] text-left text-white_A700 w-[auto]"
+            as="h1"
+            variant="h1"
+          >
             Hello!
           </Text>
-          <Text className="confirmation" as="h5" variant="h5">
+          <Text
+            className="font-medium mt-[17px] text-left text-white_A700 w-[auto]"
+            as="h5"
+            variant="h5"
+          >
             Remember your password?
           </Text>
           <Button
-            className="font-bold xl:mb-[115px] 2xl:mb-[130px] 3xl:mb-[156px] lg:mb-[92px] lg:mt-[21px] xl:mt-[26px] 2xl:mt-[30px] 3xl:mt-[36px] xl:text-[12px] 2xl:text-[14px] 3xl:text-[16px] lg:text-[9px] text-center w-[100%]"
+            className="cursor-pointer font-bold mb-[130px] min-w-[220px] mt-[30px] text-[14px] text-center text-white_A700 w-[auto]"
             shape="CircleBorder29"
-            size="xl"
+            size="8xl"
             variant="FillIndigoA200"
           >
             Lognin
           </Button>
-        </Column>
-        <Row className="absolute items-center justify-between right-[0] w-[45%]">
-          <div className="bg-white_A700_7e xl:h-[114px] 2xl:h-[129px] 3xl:h-[154px] lg:h-[92px] rounded-radius2 w-[1%]"></div>
-          <Column className="bg-white_A700 3xl:p-[108px] lg:p-[64px] xl:p-[80px] 2xl:p-[90px] rounded-bl-[32px] rounded-br-[0] rounded-tl-[32px] rounded-tr-[0] w-[98%]">
+        </div>
+        <div className="flex md:flex-col sm:flex-col flex-row gap-[10px] items-center justify-between ml-[-45px] my-[auto] md:px-[20px] sm:px-[20px] w-[46%] z-[1]">
+          <div className="bg-white_A700_7e h-[128px] md:mt-[0] sm:mt-[0] my-[448px] rounded-radius2 w-[auto]"></div>
+          <div className="bg-white_A700 flex flex-col items-start justify-start p-[90px] sm:px-[20px] md:px-[40px] rounded-bl-[32px] rounded-br-[0] rounded-tl-[32px] rounded-tr-[0] md:w-[100%] sm:w-[100%] w-[auto]">
             <Img
               src="images/img_question.svg"
-              className="lg:h-[30px] xl:h-[37px] 2xl:h-[42px] 3xl:h-[50px] lg:ml-[24px] xl:ml-[31px] 2xl:ml-[35px] 3xl:ml-[42px] lg:w-[29px] xl:w-[36px] 2xl:w-[41px] 3xl:w-[49px]"
+              className="h-[41px] md:ml-[0] sm:ml-[0] ml-[35px] w-[41px]"
               alt="question"
             />
-            <Column className="justify-start lg:ml-[24px] xl:ml-[31px] 2xl:ml-[35px] 3xl:ml-[42px] lg:mt-[46px] xl:mt-[58px] 2xl:mt-[66px] 3xl:mt-[79px] w-[55%]">
-              <Text className="text-gray_900 w-[auto]" as="h3" variant="h3">
+            <div className="flex flex-col gap-[14px] items-start justify-start md:ml-[0] sm:ml-[0] ml-[35px] mt-[66px] md:w-[100%] sm:w-[100%] w-[57%]">
+              <Text
+                className="text-gray_900 text-left w-[auto]"
+                as="h3"
+                variant="h3"
+              >
                 Password Recovery
               </Text>
-              <Text className="Enteryouremai" as="h5" variant="h5">
+              <Text
+                className="font-medium text-gray_500 text-left w-[auto]"
+                as="h5"
+                variant="h5"
+              >
                 Enter your email to recover your password
               </Text>
-            </Column>
-            <Column className="justify-start lg:ml-[24px] xl:ml-[31px] 2xl:ml-[35px] 3xl:ml-[42px] lg:mt-[44px] xl:mt-[56px] 2xl:mt-[63px] 3xl:mt-[75px] w-[76%]">
-              <Text className="columnlabel" as="h6" variant="h6">
+            </div>
+            <div className="flex flex-col gap-[14px] items-start justify-start md:ml-[0] sm:ml-[0] ml-[35px] mt-[63px] md:w-[100%] sm:w-[100%] w-[77%]">
+              <Text
+                className="font-bold text-gray_900 text-left tracking-ls1 uppercase w-[auto]"
+                as="h6"
+                variant="h6"
+              >
                 Email
               </Text>
               <Input
-                className="placeholder:text-gray_500 email"
-                wrapClassName="2xl:mt-[14px] 3xl:mt-[16px] flex lg:mt-[9px] w-[100%] xl:mt-[12px]"
+                className="font-medium p-[0] text-[14px] placeholder:text-gray_500 text-gray_500 text-left w-[100%]"
+                wrapClassName="flex w-[100%]"
                 type="email"
                 name="email"
                 placeholder="anne.carry@mail.com"
                 suffix={
                   <Img
                     src="images/img_television.svg"
-                    className="mr-[1px] lg:w-[12px] lg:h-[13px] lg:ml-[24px] xl:w-[16px] xl:h-[17px] xl:ml-[31px] 2xl:w-[18px] 2xl:h-[19px] 2xl:ml-[35px] 3xl:w-[21px] 3xl:h-[22px] 3xl:ml-[42px] my-[auto]"
+                    className="ml-[35px] my-[auto]"
                     alt="television"
                   />
                 }
                 shape="RoundedBorder8"
                 variant="OutlineGray5006c"
               ></Input>
-            </Column>
+            </div>
             <Button
-              className="font-bold lg:mb-[332px] xl:mb-[416px] 2xl:mb-[468px] 3xl:mb-[561px] lg:ml-[24px] xl:ml-[31px] 2xl:ml-[35px] 3xl:ml-[42px] lg:mt-[14px] xl:mt-[17px] 2xl:mt-[20px] 3xl:mt-[24px] xl:text-[12px] 2xl:text-[14px] 3xl:text-[16px] lg:text-[9px] text-center w-[76%]"
+              className="cursor-pointer font-bold mb-[468px] min-w-[350px] md:ml-[0] sm:ml-[0] ml-[35px] mt-[20px] text-[14px] text-center text-white_A700 w-[auto]"
               shape="CircleBorder29"
-              size="xl"
+              size="8xl"
               variant="FillIndigoA200"
             >
               Send Email
             </Button>
-          </Column>
-        </Row>
-      </Stack>
+          </div>
+        </div>
+      </div>
     </>
   );
 };

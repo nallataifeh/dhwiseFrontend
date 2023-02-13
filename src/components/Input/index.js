@@ -17,20 +17,19 @@ const shapes = {
   srcRoundedBorder12: "rounded-radius12",
 };
 const sizes = {
-  sm: "lg:p-[3px] xl:p-[4px] p-[5px] 3xl:p-[6px]",
-  md: "p-[11px] 3xl:p-[13px] lg:p-[7px] xl:p-[9px]",
-  lg: "lg:pb-[24px] xl:pb-[31px] pb-[35px] 3xl:pb-[42px] xl:pt-[11px] pt-[13px] 3xl:pt-[15px] lg:pt-[9px] xl:px-[11px] px-[13px] 3xl:px-[15px] lg:px-[9px]",
-  xl: "lg:p-[11px] xl:p-[14px] p-[16px] 3xl:p-[19px]",
-  "2xl":
-    "xl:pb-[12px] pb-[14px] 3xl:pb-[16px] lg:pb-[9px] lg:pt-[12px] xl:pt-[16px] pt-[18px] 3xl:pt-[21px] xl:px-[12px] px-[14px] 3xl:px-[16px] lg:px-[9px]",
-  "3xl":
-    "lg:pb-[24px] xl:pb-[31px] pb-[35px] 3xl:pb-[42px] lg:pt-[12px] xl:pt-[16px] pt-[18px] 3xl:pt-[21px] lg:px-[12px] xl:px-[16px] px-[18px] 3xl:px-[21px]",
-  "4xl":
-    "lg:pb-[13px] xl:pb-[16px] pb-[19px] 3xl:pb-[22px] lg:pt-[16px] xl:pt-[20px] pt-[23px] 3xl:pt-[27px] lg:px-[13px] xl:px-[16px] px-[19px] 3xl:px-[22px]",
-  smSrc: "lg:p-[5px] xl:p-[7px] p-[8px] 3xl:p-[9px]",
-  mdSrc:
-    "xl:pb-[11px] pb-[13px] 3xl:pb-[15px] lg:pb-[9px] lg:pt-[5px] xl:pt-[7px] pt-[8px] 3xl:pt-[9px] lg:px-[5px] xl:px-[7px] px-[8px] 3xl:px-[9px]",
-  lgSrc: "lg:p-[14px] xl:p-[18px] p-[21px] 3xl:p-[25px]",
+  sm: "py-[5px]",
+  md: "px-[6px] py-[7px]",
+  lg: "pl-[10px] py-[11px]",
+  xl: "pb-[35px] pl-[10px] pr-[13px] pt-[13px]",
+  "2xl": "pl-[15px] py-[16px]",
+  "3xl": "pb-[14px] pt-[18px] px-[14px]",
+  "4xl": "pb-[35px] pl-[10px] pr-[18px] pt-[18px]",
+  "5xl": "pb-[13px] pl-[13px] pt-[20px]",
+  "6xl": "pb-[19px] pl-[19px] pt-[23px]",
+  "7xl": "pb-[19px] pt-[23px]",
+  smSrc: "pr-[8px] py-[8px]",
+  mdSrc: "pb-[13px] pr-[8px] pt-[8px]",
+  lgSrc: "sm:pr-[20px] pr-[21px] py-[21px]",
 };
 
 const Input = React.forwardRef(
@@ -106,6 +105,9 @@ Input.propTypes = {
     "2xl",
     "3xl",
     "4xl",
+    "5xl",
+    "6xl",
+    "7xl",
     "smSrc",
     "mdSrc",
     "lgSrc",
@@ -119,7 +121,7 @@ Input.defaultProps = {
   type: "text",
   shape: "",
   variant: "FillWhiteA700",
-  size: "2xl",
+  size: "5xl",
 };
 
 export { Input };

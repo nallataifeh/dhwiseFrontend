@@ -1,4 +1,5 @@
 import React from "react";
+import { ProtectedRoute } from "components";
 import Settings from "pages/Settings";
 import MyProfile from "pages/MyProfile";
 import SinglePhoto from "pages/SinglePhoto";
@@ -26,7 +27,6 @@ import Login from "pages/Login";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "pages/Home";
 import NotFound from "pages/NotFound";
-
 const ProjectRoutes = () => {
   return (
     <Router>
@@ -37,29 +37,79 @@ const ProjectRoutes = () => {
         <Route path="/signup" element={<Signup />} />
         <Route path="/passwordrecovery" element={<PasswordRecovery />} />
         <Route path="/homevone" element={<HomevOne />} />
-        <Route path="/homevtwo" element={<HomevTwo />} />
-        <Route path="/stories" element={<Stories />} />
-        <Route path="/singlestorie" element={<SingleStorie />} />
-        <Route path="/singlepost" element={<SinglePost />} />
-        <Route path="/singlevideo" element={<SingleVideo />} />
-        <Route path="/videofullscreen" element={<VideoFullScreen />} />
-        <Route path="/events" element={<Events />} />
-        <Route path="/singleevent" element={<SingleEvent />} />
-        <Route path="/searchresults" element={<SearchResults />} />
-        <Route path="/notifications" element={<Notifications />} />
-        <Route path="/messages" element={<Messages />} />
-        <Route path="/directmessage" element={<DirectMessage />} />
-        <Route path="/videochat" element={<VideoChat />} />
-        <Route path="/groupmessage" element={<GroupMessage />} />
-        <Route path="/myfriends" element={<MyFriends />} />
-        <Route path="/userprofile" element={<UserProfile />} />
-        <Route path="/gallery" element={<Gallery />} />
-        <Route path="/singlephoto" element={<SinglePhoto />} />
-        <Route path="/myprofile" element={<MyProfile />} />
-        <Route path="/settings" element={<Settings />} />
+        <Route
+          path="/homevtwo"
+          element={<ProtectedRoute element={HomevTwo} />}
+        />
+        <Route path="/stories" element={<ProtectedRoute element={Stories} />} />
+        <Route
+          path="/singlestorie"
+          element={<ProtectedRoute element={SingleStorie} />}
+        />
+        <Route
+          path="/singlepost"
+          element={<ProtectedRoute element={SinglePost} />}
+        />
+        <Route
+          path="/singlevideo"
+          element={<ProtectedRoute element={SingleVideo} />}
+        />
+        <Route
+          path="/videofullscreen"
+          element={<ProtectedRoute element={VideoFullScreen} />}
+        />
+        <Route path="/events" element={<ProtectedRoute element={Events} />} />
+        <Route
+          path="/singleevent"
+          element={<ProtectedRoute element={SingleEvent} />}
+        />
+        <Route
+          path="/searchresults"
+          element={<ProtectedRoute element={SearchResults} />}
+        />
+        <Route
+          path="/notifications"
+          element={<ProtectedRoute element={Notifications} />}
+        />
+        <Route
+          path="/messages"
+          element={<ProtectedRoute element={Messages} />}
+        />
+        <Route
+          path="/directmessage"
+          element={<ProtectedRoute element={DirectMessage} />}
+        />
+        <Route
+          path="/videochat"
+          element={<ProtectedRoute element={VideoChat} />}
+        />
+        <Route
+          path="/groupmessage"
+          element={<ProtectedRoute element={GroupMessage} />}
+        />
+        <Route
+          path="/myfriends"
+          element={<ProtectedRoute element={MyFriends} />}
+        />
+        <Route
+          path="/userprofile"
+          element={<ProtectedRoute element={UserProfile} />}
+        />
+        <Route path="/gallery" element={<ProtectedRoute element={Gallery} />} />
+        <Route
+          path="/singlephoto"
+          element={<ProtectedRoute element={SinglePhoto} />}
+        />
+        <Route
+          path="/myprofile"
+          element={<ProtectedRoute element={MyProfile} />}
+        />
+        <Route
+          path="/settings"
+          element={<ProtectedRoute element={Settings} />}
+        />
       </Routes>
     </Router>
   );
 };
-
 export default ProjectRoutes;

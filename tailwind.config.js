@@ -6,7 +6,10 @@ module.exports = {
   ],
   darkMode: "class",
   theme: {
-    screens: { lg: "1024px", xl: "1281px", "2xl": "1441px", "3xl": "1729px" },
+    screens: {
+      sm: { min: "200px", max: "550px" },
+      md: { min: "551px", max: "1050px" },
+    },
     extend: {
       colors: {
         white_A700_7e: "#ffffff7e",
@@ -67,8 +70,8 @@ module.exports = {
         radius884: "8.84px",
         radius1516: "15.16px",
       },
-      letterSpacing: { ls1: "1px" },
       fontFamily: { inter: "Inter", sfprodisplay: "SF Pro Display" },
+      letterSpacing: { ls1: "1px" },
       backgroundImage: {
         gradient: "linear-gradient(134.75deg ,#0659fd,#79d0f1)",
         gradient1: "linear-gradient(180deg ,#1e1f2000,#1e1f20cc)",

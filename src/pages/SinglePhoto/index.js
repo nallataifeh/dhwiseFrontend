@@ -1,38 +1,38 @@
 import React from "react";
 
-import { Stack, Row, Line, Column, Button, Img, Text, Input } from "components";
-import Sidebar from "components/Sidebar/Sidebar";
+import { Line, Button, Img, Text, Input } from "components";
+import Sidebar from "components/Sidebar";
 
 const SinglePhotoPage = () => {
   return (
     <>
-      <Stack className="bg-blue_A700 font-sfprodisplay 2xl:h-[1025px] 3xl:h-[1230px] lg:h-[729px] xl:h-[911px] mx-[auto] w-[100%]">
-        <Row className="absolute items-center lg:pl-[3px] xl:pl-[4px] 2xl:pl-[5px] 3xl:pl-[6px] right-[0] w-[89%]">
-          <Line className="bg-gray_500_7e xl:h-[114px] 2xl:h-[129px] 3xl:h-[154px] lg:h-[92px] rounded-radius2 w-[5px]" />
-          <div className="bg-gray_900 2xl:h-[1025px] 3xl:h-[1230px] lg:h-[729px] xl:h-[911px] 2xl:ml-[10px] 3xl:ml-[12px] lg:ml-[7px] xl:ml-[8px] rounded-bl-[32px] rounded-br-[0] rounded-tl-[32px] rounded-tr-[0] w-[99%]"></div>
-        </Row>
-        <Column className="absolute items-center justify-start left-[17%] top-[4%] w-[48%]">
-          <Row className="items-center justify-between w-[96%]">
+      <div className="bg-blue_A700 font-sfprodisplay h-[1024px] mx-[auto] relative w-[100%]">
+        <div className="absolute flex md:flex-col sm:flex-col flex-row gap-[10px] h-[max-content] inset-y-[0] items-center justify-start my-[auto] pl-[5px] md:px-[20px] sm:px-[20px] right-[0] w-[89%]">
+          <Line className="bg-gray_500_7e h-[128px] md:h-[5px] sm:h-[5px] md:mt-[0] sm:mt-[0] my-[448px] rounded-radius2 md:w-[100%] sm:w-[100%] w-[5px]" />
+          <div className="bg-gray_900 h-[1024px] rounded-bl-[32px] rounded-br-[0] rounded-tl-[32px] rounded-tr-[0] w-[99%]"></div>
+        </div>
+        <div className="absolute flex flex-col gap-[144px] md:gap-[40px] sm:gap-[40px] items-center justify-start left-[17%] md:px-[20px] sm:px-[20px] top-[4%] w-[49%]">
+          <div className="flex flex-row sm:gap-[40px] items-center justify-between md:w-[100%] sm:w-[100%] w-[96%]">
             <Button
-              className="flex items-center justify-center text-center w-[15%]"
+              className="flex items-center justify-center text-center"
               leftIcon={
                 <Img
                   src="images/img_arrowleft.svg"
-                  className="text-center lg:w-[12px] lg:h-[13px] lg:mr-[7px] xl:w-[16px] xl:h-[17px] xl:mr-[8px] 2xl:w-[18px] 2xl:h-[19px] 2xl:mr-[10px] 3xl:w-[21px] 3xl:h-[22px] 3xl:mr-[12px]"
+                  className="mr-[10px] text-center"
                   alt="arrow_left"
                 />
               }
               shape="RoundedBorder12"
-              size="xl"
+              size="7xl"
               variant="FillWhiteA70033"
             >
-              <div className="bg-transparent font-bold xl:text-[12px] 2xl:text-[14px] 3xl:text-[16px] lg:text-[9px]">
+              <div className="bg-transparent cursor-pointer font-bold text-[14px] text-left text-white_A700">
                 Back
               </div>
             </Button>
-            <Row className="font-inter items-center justify-between w-[19%]">
+            <div className="flex flex-row font-inter gap-[10px] items-center justify-between w-[auto]">
               <Text
-                className="font-medium text-white_A700 w-[auto]"
+                className="font-medium text-left text-white_A700 w-[auto]"
                 as="h5"
                 variant="h5"
               >
@@ -40,87 +40,87 @@ const SinglePhotoPage = () => {
               </Text>
               <Img
                 src="images/img_avatar.png"
-                className="Avatar"
+                className="h-[38px] md:h-[auto] sm:h-[auto] object-cover rounded-radius12 w-[38px]"
                 alt="Avatar"
               />
-            </Row>
-          </Row>
-          <Row className="items-center justify-between lg:mt-[102px] xl:mt-[128px] 2xl:mt-[144px] 3xl:mt-[172px] w-[100%]">
+            </div>
+          </div>
+          <div className="flex md:flex-col sm:flex-col flex-row md:gap-[40px] sm:gap-[40px] items-center justify-between w-[100%]">
             <Button
-              className="flex items-center justify-center mail_One1"
+              className="flex h-[48px] items-center justify-center w-[48px]"
               shape="icbRoundedBorder12"
               size="lgIcn"
               variant="icbOutlineWhiteA70033"
             >
               <Img
                 src="images/img_arrowleft_48X48.svg"
-                className="flex items-center justify-center"
+                className=""
                 alt="arrowleft"
               />
             </Button>
             <Img
               src="images/img_photo4.png"
-              className="lg:h-[384px] xl:h-[481px] 2xl:h-[541px] 3xl:h-[649px] rounded-radius8 w-[73%]"
+              className="md:flex-1 sm:flex-1 h-[540px] sm:h-[auto] object-cover rounded-radius8 md:w-[100%] sm:w-[100%] w-[auto]"
               alt="Image"
             />
             <Button
-              className="flex items-center justify-center mail_One1"
+              className="flex h-[48px] items-center justify-center w-[48px]"
               shape="icbRoundedBorder12"
               size="lgIcn"
               variant="icbOutlineWhiteA70033_1"
             >
               <Img
                 src="images/img_arrowright_48X48.svg"
-                className="flex items-center justify-center"
+                className=""
                 alt="arrowright"
               />
             </Button>
-          </Row>
-        </Column>
-        <Row className="absolute items-center justify-between right-[0] w-[31%]">
-          <div className="bg-gray_500_7e xl:h-[114px] 2xl:h-[129px] 3xl:h-[154px] lg:h-[92px] rounded-radius2 w-[1%]"></div>
-          <Column className="bg-white_A700 items-end lg:p-[28px] xl:p-[35px] 2xl:p-[40px] 3xl:p-[48px] rounded-bl-[32px] rounded-br-[0] rounded-tl-[32px] rounded-tr-[0] w-[97%]">
-            <Row className="items-center justify-end lg:mt-[3px] xl:mt-[4px] 2xl:mt-[5px] 3xl:mt-[6px] w-[33%]">
+          </div>
+        </div>
+        <div className="absolute flex sm:flex-col flex-row gap-[10px] h-[max-content] inset-y-[0] items-center justify-between my-[auto] md:px-[20px] sm:px-[20px] right-[0] w-[32%]">
+          <div className="bg-gray_500_7e h-[128px] sm:mt-[0] my-[448px] rounded-radius2 w-[auto]"></div>
+          <div className="bg-white_A700 flex flex-col md:gap-[40px] sm:gap-[40px] gap-[843px] items-end justify-end p-[40px] sm:px-[20px] rounded-bl-[32px] rounded-br-[0] rounded-tl-[32px] rounded-tr-[0] sm:w-[100%] w-[auto]">
+            <div className="flex flex-row gap-[20px] items-center justify-end mt-[5px] md:w-[100%] sm:w-[100%] w-[33%]">
               <Button
-                className="font-bold lg:text-[15px] xl:text-[19px] 2xl:text-[22px] 3xl:text-[26px] text-center mail_One1"
+                className="cursor-pointer font-bold h-[48px] sm:text-[18.32px] md:text-[20.32px] text-[22.32px] text-center text-white_A700 w-[48px]"
                 shape="RoundedBorder12"
-                size="lg"
+                size="5xl"
                 variant="FillLightblue200"
               >
                 1
               </Button>
               <Img
                 src="images/img_avatar_48X48.png"
-                className="Avatar_One"
+                className="h-[48px] md:h-[auto] sm:h-[auto] object-cover rounded-radius12 w-[48px]"
                 alt="Avatar One"
               />
-            </Row>
-            <Row className="bg-gray_100 font-inter items-center 3xl:mt-[1012px] lg:mt-[599px] xl:mt-[749px] 2xl:mt-[843px] lg:p-[3px] xl:p-[4px] 2xl:p-[5px] 3xl:p-[6px] rounded-radius4 w-[96%]">
+            </div>
+            <div className="bg-gray_100 flex flex-row font-inter gap-[10px] items-center justify-start p-[5px] rounded-radius4 md:w-[100%] sm:w-[100%] w-[96%]">
               <Input
-                className="placeholder:text-gray_500 email"
-                wrapClassName="flex w-[86%]"
+                className="font-medium p-[0] text-[14px] placeholder:text-gray_500 text-gray_500 text-left w-[100%]"
+                wrapClassName="flex sm:w-[100%] w-[87%]"
                 name="FrameEight"
                 placeholder="Write a comment…"
                 suffix={
                   <Img
                     src="images/img_user_1.svg"
-                    className="lg:w-[9px] lg:h-[10px] lg:ml-[24px] lg:mr-[3px] xl:w-[12px] xl:h-[13px] xl:ml-[31px] xl:mr-[4px] 2xl:w-[14px] 2xl:h-[15px] 2xl:ml-[35px] 2xl:mr-[5px] 3xl:w-[16px] 3xl:h-[17px] 3xl:ml-[42px] 3xl:mr-[6px] my-[auto]"
+                    className="ml-[35px] my-[auto]"
                     alt="user"
                   />
                 }
-                size="md"
+                size="lg"
                 variant="FillGray100"
               ></Input>
               <Img
                 src="images/img_send.svg"
-                className="2xl:ml-[10px] 3xl:ml-[12px] lg:ml-[7px] xl:ml-[8px] location"
+                className="h-[14px] w-[14px]"
                 alt="send"
               />
-            </Row>
-          </Column>
-        </Row>
-        <Sidebar className="absolute left-[0] w-[11%]" />
-      </Stack>
+            </div>
+          </div>
+        </div>
+        <Sidebar className="absolute flex flex-col md:hidden sm:hidden inset-y-[0] left-[0] my-[auto] md:px-[20px] sm:px-[20px] w-[12%]" />
+      </div>
     </>
   );
 };

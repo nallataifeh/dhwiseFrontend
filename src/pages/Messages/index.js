@@ -1,17 +1,7 @@
 import React from "react";
 
-import {
-  Column,
-  Row,
-  Input,
-  Img,
-  Button,
-  Text,
-  Line,
-  List,
-  Stack,
-} from "components";
-import Sidebar from "components/Sidebar/Sidebar";
+import Sidebar from "components/Sidebar";
+import { Input, Img, Button, Text, Line, List } from "components";
 import { CloseSVG } from "../../assets/images/index.js";
 
 const MessagesPage = () => {
@@ -19,24 +9,24 @@ const MessagesPage = () => {
 
   return (
     <>
-      <Column className="bg-gray_100 font-sfprodisplay items-center justify-start mx-[auto] w-[100%]">
-        <Row className="items-center justify-between w-[100%]">
-          <Row className="items-center justify-between w-[41%]">
-            <Sidebar className="w-[28%]" />
-            <Column className="items-center w-[61%]">
-              <Column className="items-center justify-start w-[100%]">
-                <Row className="items-center justify-between w-[98%]">
+      <div className="bg-gray_100 flex flex-col font-sfprodisplay items-center justify-start mx-[auto] w-[100%]">
+        <div className="flex md:flex-col sm:flex-col flex-row md:gap-[52px] sm:gap-[52px] items-center justify-between w-[100%]">
+          <div className="flex md:flex-1 sm:flex-1 sm:flex-col flex-row sm:gap-[40px] items-center justify-between md:px-[20px] sm:px-[20px] md:w-[100%] sm:w-[100%] w-[auto]">
+            <Sidebar className="flex flex-col md:hidden sm:hidden w-[165px]" />
+            <div className="flex flex-1 flex-col gap-[40px] items-center justify-start w-[100%]">
+              <div className="flex flex-col md:gap-[40px] sm:gap-[40px] gap-[63px] items-center justify-start w-[100%]">
+                <div className="flex flex-row gap-[15px] items-center justify-between md:w-[100%] sm:w-[100%] w-[98%]">
                   <Input
                     value={inputvalue}
                     onChange={(e) => setInputvalue(e?.target?.value)}
-                    className="placeholder:text-gray_500 email"
-                    wrapClassName="flex w-[82%]"
+                    className="font-medium p-[0] text-[14px] placeholder:text-gray_500 text-gray_500 text-left w-[100%]"
+                    wrapClassName="flex w-[auto]"
                     name="Search"
                     placeholder="Search in social…"
                     prefix={
                       <Img
                         src="images/img_search.svg"
-                        className="cursor-pointer ml-[1px] lg:w-[12px] lg:h-[13px] lg:mr-[10px] xl:w-[16px] xl:h-[17px] xl:mr-[13px] 2xl:w-[18px] 2xl:h-[19px] 2xl:mr-[15px] 3xl:w-[21px] 3xl:h-[22px] 3xl:mr-[18px] my-[auto]"
+                        className="cursor-pointer mr-[15px] my-[auto]"
                         alt="search"
                       />
                     }
@@ -44,7 +34,7 @@ const MessagesPage = () => {
                       inputvalue?.length > 0 ? (
                         <CloseSVG
                           color="#8f92a1"
-                          className="cursor-pointer lg:w-[12px] lg:h-[13px] lg:ml-[7px] lg:mr-[15px] xl:w-[16px] xl:h-[17px] xl:ml-[8px] xl:mr-[19px] 2xl:w-[18px] 2xl:h-[19px] 2xl:ml-[10px] 2xl:mr-[22px] 3xl:w-[21px] 3xl:h-[22px] 3xl:ml-[12px] 3xl:mr-[26px] my-[auto]"
+                          className="cursor-pointer ml-[10px] mr-[22px] my-[auto]"
                           onClick={() => setInputvalue("")}
                         />
                       ) : (
@@ -56,413 +46,485 @@ const MessagesPage = () => {
                     variant="srcFillWhiteA700"
                   ></Input>
                   <Button
-                    className="flex items-center justify-center mail_One1"
+                    className="flex h-[48px] items-center justify-center my-[5px] w-[48px]"
                     shape="icbRoundedBorder12"
                     size="mdIcn"
                     variant="icbFillGreen400"
                   >
                     <Img
                       src="images/img_laptop_14X14.svg"
-                      className="flex items-center justify-center lg:h-[16px] xl:h-[20px] 2xl:h-[23px] 3xl:h-[27px]"
+                      className="h-[22px]"
                       alt="laptop"
                     />
                   </Button>
-                </Row>
-                <Column className="justify-start lg:mt-[44px] xl:mt-[56px] 2xl:mt-[63px] 3xl:mt-[75px] w-[100%]">
-                  <Text className="text-gray_900 w-[auto]" as="h1" variant="h1">
+                </div>
+                <div className="flex flex-col gap-[42px] items-start justify-start w-[100%]">
+                  <Text
+                    className="text-gray_900 text-left w-[auto]"
+                    as="h1"
+                    variant="h1"
+                  >
                     Inbox
                   </Text>
-                  <Row className="font-inter items-start lg:mt-[29px] xl:mt-[37px] 2xl:mt-[42px] 3xl:mt-[50px] py-[1px] w-[84%]">
-                    <Column className="items-center justify-start mt-[3px] w-[38%]">
+                  <div className="flex flex-row font-inter items-start justify-start md:w-[100%] sm:w-[100%] w-[84%]">
+                    <div className="flex flex-col gap-[7px] items-center justify-start mt-[3px] w-[39%]">
                       <Text
-                        className="font-bold text-gray_900 w-[auto]"
+                        className="font-bold text-gray_900 text-left w-[auto]"
                         as="h5"
                         variant="h5"
                       >
                         Direct Messages
                       </Text>
-                      <Line className="bg-gray_900 h-[2px] lg:mt-[4px] xl:mt-[6px] 2xl:mt-[7px] 3xl:mt-[8px] w-[100%]" />
-                    </Column>
+                      <Line className="bg-gray_900 h-[2px] w-[100%]" />
+                    </div>
                     <Text
-                      className="font-bold lg:ml-[14px] xl:ml-[17px] 2xl:ml-[20px] 3xl:ml-[24px] mt-[3px] text-gray_500 w-[auto]"
+                      className="font-bold ml-[20px] mt-[3px] text-gray_500 text-left w-[auto]"
                       as="h5"
                       variant="h5"
                     >
                       Group Chat
                     </Text>
                     <Text
-                      className="lg:ml-[16px] xl:ml-[20px] 2xl:ml-[23px] 3xl:ml-[27px] NavigationTab2"
+                      className="font-bold ml-[23px] text-gray_500 text-left w-[auto]"
                       as="h5"
                       variant="h5"
                     >
                       Archived
                     </Text>
-                  </Row>
-                </Column>
-              </Column>
+                  </div>
+                </div>
+              </div>
               <List
-                className="font-inter gap-[0] min-h-[auto] lg:mt-[28px] xl:mt-[35px] 2xl:mt-[40px] 3xl:mt-[48px] w-[98%]"
+                className="flex-col font-inter gap-[40px] grid items-center md:w-[100%] sm:w-[100%] w-[98%]"
                 orientation="vertical"
               >
-                <Row className="Messages">
-                  <Row className="items-end justify-between w-[59%]">
-                    <Stack className="lg:h-[35px] xl:h-[43px] 2xl:h-[49px] 3xl:h-[58px] w-[24%]">
+                <div className="flex flex-row items-start justify-between w-[100%]">
+                  <div className="flex flex-row gap-[13px] items-end justify-between w-[auto]">
+                    <div className="h-[48px] md:h-[auto] sm:h-[auto] relative w-[auto]">
                       <Img
                         src="images/img_avatar_28X28.png"
-                        className="Avatar9"
+                        className="absolute h-[48px] inset-y-[0] left-[0] my-[auto] object-cover rounded-radius12 w-[48px]"
                         alt="Avatar"
                       />
-                      <Stack className="absolute xl:h-[11px] 2xl:h-[13px] 3xl:h-[15px] lg:h-[9px] right-[0] top-[0] w-[30%]">
-                        <div className="absolute bg-gray_100 xl:h-[11px] 2xl:h-[13px] 3xl:h-[15px] lg:h-[9px] rounded-radius758 w-[100%]"></div>
-                        <div className="absolute bg-green_400 2xl:h-[11px] 3xl:h-[13px] lg:h-[8px] xl:h-[9px] inset-x-[0] mx-[auto] rounded-radius50 top-[0] 2xl:w-[10px] 3xl:w-[12px] lg:w-[7px] xl:w-[8px]"></div>
-                      </Stack>
-                    </Stack>
-                    <Column className="justify-start mb-[3px] lg:mt-[4px] xl:mt-[6px] 2xl:mt-[7px] 3xl:mt-[8px] w-[70%]">
+                      <div className="absolute h-[12px] md:h-[auto] sm:h-[auto] right-[0] top-[0] w-[30%]">
+                        <div className="bg-gray_100 h-[12px] m-[auto] rounded-radius758 w-[100%]"></div>
+                        <div className="absolute bg-green_400 h-[10px] inset-x-[0] mx-[auto] rounded-radius50 top-[0] w-[10px]"></div>
+                      </div>
+                    </div>
+                    <div className="flex flex-col gap-[5px] items-start justify-start mb-[3px] mt-[7px] w-[auto]">
                       <Text
-                        className="font-medium text-gray_900 w-[auto]"
+                        className="font-medium text-gray_900 text-left w-[auto]"
                         as="h5"
                         variant="h5"
                       >
                         Billy Green
                       </Text>
-                      <Text className="Message" as="h5" variant="h5">
+                      <Text
+                        className="font-normal not-italic text-gray_500 text-left w-[auto]"
+                        as="h5"
+                        variant="h5"
+                      >
                         Thank you for sharing
                       </Text>
-                    </Column>
-                  </Row>
-                  <Column className="items-end justify-start mt-[3px] pl-[4px] pt-[4px] w-[25%]">
-                    <Text className="Right" as="h6" variant="h6">
+                    </div>
+                  </div>
+                  <div className="flex flex-col gap-[5px] items-end justify-start mt-[3px] pl-[4px] pt-[4px] w-[auto]">
+                    <Text
+                      className="font-inter font-normal not-italic text-gray_500 text-left w-[auto]"
+                      as="h6"
+                      variant="h6"
+                    >
                       3:03pm
                     </Text>
                     <Button
-                      className="font-bold font-sfprodisplay lg:mt-[3px] xl:mt-[4px] 2xl:mt-[5px] 3xl:mt-[6px] 2xl:text-[10px] 3xl:text-[12px] lg:text-[7px] xl:text-[8px] text-center tracking-ls1 uppercase w-[21%]"
+                      className="cursor-pointer font-bold font-sfprodisplay text-[10px] text-center text-white_A700 tracking-ls1 uppercase w-[17px]"
                       shape="RoundedBorder4"
                       size="sm"
                       variant="FillRedA200"
                     >
                       1
                     </Button>
-                  </Column>
-                </Row>
-                <Row className="Messages">
-                  <Row className="items-end justify-between w-[59%]">
-                    <Stack className="lg:h-[35px] xl:h-[43px] 2xl:h-[49px] 3xl:h-[58px] w-[24%]">
+                  </div>
+                </div>
+                <div className="flex flex-row items-start justify-between w-[100%]">
+                  <div className="flex flex-row gap-[13px] items-end justify-between w-[auto]">
+                    <div className="h-[48px] md:h-[auto] sm:h-[auto] relative w-[auto]">
                       <Img
                         src="images/img_image_11.png"
-                        className="Avatar9"
+                        className="absolute h-[48px] inset-y-[0] left-[0] my-[auto] object-cover rounded-radius12 w-[48px]"
                         alt="Avatar One"
                       />
-                      <Stack className="absolute xl:h-[11px] 2xl:h-[13px] 3xl:h-[15px] lg:h-[9px] right-[0] top-[0] w-[30%]">
-                        <div className="absolute bg-gray_100 xl:h-[11px] 2xl:h-[13px] 3xl:h-[15px] lg:h-[9px] rounded-radius758 w-[100%]"></div>
-                        <div className="absolute bg-green_400 2xl:h-[11px] 3xl:h-[13px] lg:h-[8px] xl:h-[9px] inset-x-[0] mx-[auto] rounded-radius50 top-[0] 2xl:w-[10px] 3xl:w-[12px] lg:w-[7px] xl:w-[8px]"></div>
-                      </Stack>
-                    </Stack>
-                    <Column className="justify-start mb-[3px] lg:mt-[4px] xl:mt-[6px] 2xl:mt-[7px] 3xl:mt-[8px] w-[70%]">
+                      <div className="absolute h-[12px] md:h-[auto] sm:h-[auto] right-[0] top-[0] w-[30%]">
+                        <div className="bg-gray_100 h-[12px] m-[auto] rounded-radius758 w-[100%]"></div>
+                        <div className="absolute bg-green_400 h-[10px] inset-x-[0] mx-[auto] rounded-radius50 top-[0] w-[10px]"></div>
+                      </div>
+                    </div>
+                    <div className="flex flex-col gap-[5px] items-start justify-start mb-[3px] mt-[7px] w-[auto]">
                       <Text
-                        className="font-medium text-gray_900 w-[auto]"
+                        className="font-medium text-gray_900 text-left w-[auto]"
                         as="h5"
                         variant="h5"
                       >
                         Billy Green
                       </Text>
-                      <Text className="Message" as="h5" variant="h5">
+                      <Text
+                        className="font-normal not-italic text-gray_500 text-left w-[auto]"
+                        as="h5"
+                        variant="h5"
+                      >
                         Thank you for sharing
                       </Text>
-                    </Column>
-                  </Row>
-                  <Column className="items-end justify-start mt-[3px] pl-[4px] pt-[4px] w-[25%]">
-                    <Text className="Right" as="h6" variant="h6">
+                    </div>
+                  </div>
+                  <div className="flex flex-col gap-[5px] items-end justify-start mt-[3px] pl-[4px] pt-[4px] w-[auto]">
+                    <Text
+                      className="font-inter font-normal not-italic text-gray_500 text-left w-[auto]"
+                      as="h6"
+                      variant="h6"
+                    >
                       3:03pm
                     </Text>
                     <Button
-                      className="font-bold font-sfprodisplay lg:mt-[3px] xl:mt-[4px] 2xl:mt-[5px] 3xl:mt-[6px] 2xl:text-[10px] 3xl:text-[12px] lg:text-[7px] xl:text-[8px] text-center tracking-ls1 uppercase w-[21%]"
+                      className="cursor-pointer font-bold font-sfprodisplay text-[10px] text-center text-white_A700 tracking-ls1 uppercase w-[17px]"
                       shape="RoundedBorder4"
                       size="sm"
                       variant="FillRedA200"
                     >
                       1
                     </Button>
-                  </Column>
-                </Row>
-                <Row className="Messages">
-                  <Row className="items-end justify-between w-[59%]">
-                    <Stack className="lg:h-[35px] xl:h-[43px] 2xl:h-[49px] 3xl:h-[58px] w-[24%]">
+                  </div>
+                </div>
+                <div className="flex flex-row items-start justify-between w-[100%]">
+                  <div className="flex flex-row gap-[13px] items-end justify-between w-[auto]">
+                    <div className="h-[48px] md:h-[auto] sm:h-[auto] relative w-[auto]">
                       <Img
                         src="images/img_image_9.png"
-                        className="Avatar9"
+                        className="absolute h-[48px] inset-y-[0] left-[0] my-[auto] object-cover rounded-radius12 w-[48px]"
                         alt="Avatar Two"
                       />
-                      <Stack className="absolute xl:h-[11px] 2xl:h-[13px] 3xl:h-[15px] lg:h-[9px] right-[0] top-[0] w-[30%]">
-                        <div className="absolute bg-gray_100 xl:h-[11px] 2xl:h-[13px] 3xl:h-[15px] lg:h-[9px] rounded-radius758 w-[100%]"></div>
-                        <div className="absolute bg-green_400 2xl:h-[11px] 3xl:h-[13px] lg:h-[8px] xl:h-[9px] inset-x-[0] mx-[auto] rounded-radius50 top-[0] 2xl:w-[10px] 3xl:w-[12px] lg:w-[7px] xl:w-[8px]"></div>
-                      </Stack>
-                    </Stack>
-                    <Column className="justify-start mb-[3px] lg:mt-[4px] xl:mt-[6px] 2xl:mt-[7px] 3xl:mt-[8px] w-[70%]">
+                      <div className="absolute h-[12px] md:h-[auto] sm:h-[auto] right-[0] top-[0] w-[30%]">
+                        <div className="bg-gray_100 h-[12px] m-[auto] rounded-radius758 w-[100%]"></div>
+                        <div className="absolute bg-green_400 h-[10px] inset-x-[0] mx-[auto] rounded-radius50 top-[0] w-[10px]"></div>
+                      </div>
+                    </div>
+                    <div className="flex flex-col gap-[5px] items-start justify-start mb-[3px] mt-[7px] w-[auto]">
                       <Text
-                        className="font-medium text-gray_900 w-[auto]"
+                        className="font-medium text-gray_900 text-left w-[auto]"
                         as="h5"
                         variant="h5"
                       >
                         Billy Green
                       </Text>
-                      <Text className="Message" as="h5" variant="h5">
+                      <Text
+                        className="font-normal not-italic text-gray_500 text-left w-[auto]"
+                        as="h5"
+                        variant="h5"
+                      >
                         Thank you for sharing
                       </Text>
-                    </Column>
-                  </Row>
-                  <Column className="items-end justify-start mt-[3px] pl-[4px] pt-[4px] w-[25%]">
-                    <Text className="Right" as="h6" variant="h6">
+                    </div>
+                  </div>
+                  <div className="flex flex-col gap-[5px] items-end justify-start mt-[3px] pl-[4px] pt-[4px] w-[auto]">
+                    <Text
+                      className="font-inter font-normal not-italic text-gray_500 text-left w-[auto]"
+                      as="h6"
+                      variant="h6"
+                    >
                       3:03pm
                     </Text>
                     <Button
-                      className="font-bold font-sfprodisplay lg:mt-[3px] xl:mt-[4px] 2xl:mt-[5px] 3xl:mt-[6px] 2xl:text-[10px] 3xl:text-[12px] lg:text-[7px] xl:text-[8px] text-center tracking-ls1 uppercase w-[21%]"
+                      className="cursor-pointer font-bold font-sfprodisplay text-[10px] text-center text-white_A700 tracking-ls1 uppercase w-[17px]"
                       shape="RoundedBorder4"
                       size="sm"
                       variant="FillRedA200"
                     >
                       1
                     </Button>
-                  </Column>
-                </Row>
-                <Row className="pr-[1px] Messages">
-                  <Row className="items-end justify-between w-[59%]">
-                    <Stack className="lg:h-[35px] xl:h-[43px] 2xl:h-[49px] 3xl:h-[58px] w-[24%]">
+                  </div>
+                </div>
+                <div className="flex flex-row items-start justify-between w-[100%]">
+                  <div className="flex flex-row gap-[13px] items-end justify-between w-[auto]">
+                    <div className="h-[48px] md:h-[auto] sm:h-[auto] relative w-[auto]">
                       <Img
                         src="images/img_avatar_18.png"
-                        className="Avatar9"
+                        className="absolute h-[48px] inset-y-[0] left-[0] my-[auto] object-cover rounded-radius12 w-[48px]"
                         alt="Avatar Three"
                       />
-                      <Stack className="absolute xl:h-[11px] 2xl:h-[13px] 3xl:h-[15px] lg:h-[9px] right-[0] top-[0] w-[30%]">
-                        <div className="absolute bg-gray_100 xl:h-[11px] 2xl:h-[13px] 3xl:h-[15px] lg:h-[9px] rounded-radius758 w-[100%]"></div>
-                        <div className="absolute bg-green_400 2xl:h-[11px] 3xl:h-[13px] lg:h-[8px] xl:h-[9px] inset-x-[0] mx-[auto] rounded-radius50 top-[0] 2xl:w-[10px] 3xl:w-[12px] lg:w-[7px] xl:w-[8px]"></div>
-                      </Stack>
-                    </Stack>
-                    <Column className="justify-start mb-[3px] lg:mt-[4px] xl:mt-[6px] 2xl:mt-[7px] 3xl:mt-[8px] w-[70%]">
+                      <div className="absolute h-[12px] md:h-[auto] sm:h-[auto] right-[0] top-[0] w-[30%]">
+                        <div className="bg-gray_100 h-[12px] m-[auto] rounded-radius758 w-[100%]"></div>
+                        <div className="absolute bg-green_400 h-[10px] inset-x-[0] mx-[auto] rounded-radius50 top-[0] w-[10px]"></div>
+                      </div>
+                    </div>
+                    <div className="flex flex-col gap-[5px] items-start justify-start mb-[3px] mt-[7px] w-[auto]">
                       <Text
-                        className="font-medium text-gray_900 w-[auto]"
+                        className="font-medium text-gray_900 text-left w-[auto]"
                         as="h5"
                         variant="h5"
                       >
                         Billy Green
                       </Text>
-                      <Text className="Message" as="h5" variant="h5">
+                      <Text
+                        className="font-normal not-italic text-gray_500 text-left w-[auto]"
+                        as="h5"
+                        variant="h5"
+                      >
                         Thank you for sharing
                       </Text>
-                    </Column>
-                  </Row>
-                  <Text className="duration" as="h6" variant="h6">
+                    </div>
+                  </div>
+                  <Text
+                    className="font-normal mt-[7px] not-italic text-gray_500 text-left w-[auto]"
+                    as="h6"
+                    variant="h6"
+                  >
                     Yesterday
                   </Text>
-                </Row>
-                <Row className="pr-[1px] Messages">
-                  <Row className="items-end justify-between w-[59%]">
-                    <Stack className="lg:h-[35px] xl:h-[43px] 2xl:h-[49px] 3xl:h-[58px] w-[24%]">
+                </div>
+                <div className="flex flex-row items-start justify-between w-[100%]">
+                  <div className="flex flex-row gap-[13px] items-end justify-between w-[auto]">
+                    <div className="h-[48px] md:h-[auto] sm:h-[auto] relative w-[auto]">
                       <Img
                         src="images/img_avatar_6.png"
-                        className="Avatar9"
+                        className="absolute h-[48px] inset-y-[0] left-[0] my-[auto] object-cover rounded-radius12 w-[48px]"
                         alt="Avatar Four"
                       />
-                      <Stack className="absolute xl:h-[11px] 2xl:h-[13px] 3xl:h-[15px] lg:h-[9px] right-[0] top-[0] w-[30%]">
-                        <div className="absolute bg-gray_100 xl:h-[11px] 2xl:h-[13px] 3xl:h-[15px] lg:h-[9px] rounded-radius758 w-[100%]"></div>
-                        <div className="absolute bg-green_400 2xl:h-[11px] 3xl:h-[13px] lg:h-[8px] xl:h-[9px] inset-x-[0] mx-[auto] rounded-radius50 top-[0] 2xl:w-[10px] 3xl:w-[12px] lg:w-[7px] xl:w-[8px]"></div>
-                      </Stack>
-                    </Stack>
-                    <Column className="justify-start mb-[3px] lg:mt-[4px] xl:mt-[6px] 2xl:mt-[7px] 3xl:mt-[8px] w-[70%]">
+                      <div className="absolute h-[12px] md:h-[auto] sm:h-[auto] right-[0] top-[0] w-[30%]">
+                        <div className="bg-gray_100 h-[12px] m-[auto] rounded-radius758 w-[100%]"></div>
+                        <div className="absolute bg-green_400 h-[10px] inset-x-[0] mx-[auto] rounded-radius50 top-[0] w-[10px]"></div>
+                      </div>
+                    </div>
+                    <div className="flex flex-col gap-[5px] items-start justify-start mb-[3px] mt-[7px] w-[auto]">
                       <Text
-                        className="font-medium text-gray_900 w-[auto]"
+                        className="font-medium text-gray_900 text-left w-[auto]"
                         as="h5"
                         variant="h5"
                       >
                         Billy Green
                       </Text>
-                      <Text className="Message" as="h5" variant="h5">
+                      <Text
+                        className="font-normal not-italic text-gray_500 text-left w-[auto]"
+                        as="h5"
+                        variant="h5"
+                      >
                         Thank you for sharing
                       </Text>
-                    </Column>
-                  </Row>
-                  <Text className="duration" as="h6" variant="h6">
+                    </div>
+                  </div>
+                  <Text
+                    className="font-normal mt-[7px] not-italic text-gray_500 text-left w-[auto]"
+                    as="h6"
+                    variant="h6"
+                  >
                     Yesterday
                   </Text>
-                </Row>
-                <Row className="pr-[1px] Messages">
-                  <Row className="items-end justify-between w-[59%]">
-                    <Stack className="lg:h-[35px] xl:h-[43px] 2xl:h-[49px] 3xl:h-[58px] w-[24%]">
+                </div>
+                <div className="flex flex-row items-start justify-between w-[100%]">
+                  <div className="flex flex-row gap-[13px] items-end justify-between w-[auto]">
+                    <div className="h-[48px] md:h-[auto] sm:h-[auto] relative w-[auto]">
                       <Img
                         src="images/img_avatar_21.png"
-                        className="Avatar9"
+                        className="absolute h-[48px] inset-y-[0] left-[0] my-[auto] object-cover rounded-radius12 w-[48px]"
                         alt="Avatar Five"
                       />
-                      <Stack className="absolute xl:h-[11px] 2xl:h-[13px] 3xl:h-[15px] lg:h-[9px] right-[0] top-[0] w-[30%]">
-                        <div className="absolute bg-gray_100 xl:h-[11px] 2xl:h-[13px] 3xl:h-[15px] lg:h-[9px] rounded-radius758 w-[100%]"></div>
-                        <div className="absolute bg-green_400 2xl:h-[11px] 3xl:h-[13px] lg:h-[8px] xl:h-[9px] inset-x-[0] mx-[auto] rounded-radius50 top-[0] 2xl:w-[10px] 3xl:w-[12px] lg:w-[7px] xl:w-[8px]"></div>
-                      </Stack>
-                    </Stack>
-                    <Column className="justify-start mb-[3px] lg:mt-[4px] xl:mt-[6px] 2xl:mt-[7px] 3xl:mt-[8px] w-[70%]">
+                      <div className="absolute h-[12px] md:h-[auto] sm:h-[auto] right-[0] top-[0] w-[30%]">
+                        <div className="bg-gray_100 h-[12px] m-[auto] rounded-radius758 w-[100%]"></div>
+                        <div className="absolute bg-green_400 h-[10px] inset-x-[0] mx-[auto] rounded-radius50 top-[0] w-[10px]"></div>
+                      </div>
+                    </div>
+                    <div className="flex flex-col gap-[5px] items-start justify-start mb-[3px] mt-[7px] w-[auto]">
                       <Text
-                        className="font-medium text-gray_900 w-[auto]"
+                        className="font-medium text-gray_900 text-left w-[auto]"
                         as="h5"
                         variant="h5"
                       >
                         Billy Green
                       </Text>
-                      <Text className="Message" as="h5" variant="h5">
+                      <Text
+                        className="font-normal not-italic text-gray_500 text-left w-[auto]"
+                        as="h5"
+                        variant="h5"
+                      >
                         Thank you for sharing
                       </Text>
-                    </Column>
-                  </Row>
-                  <Text className="december,Counter_Two" as="h6" variant="h6">
+                    </div>
+                  </div>
+                  <Text
+                    className="font-normal mt-[6px] not-italic text-gray_500 text-left w-[auto]"
+                    as="h6"
+                    variant="h6"
+                  >
                     Oct 26
                   </Text>
-                </Row>
-                <Row className="Messages">
-                  <Row className="items-end justify-between w-[59%]">
-                    <Stack className="lg:h-[35px] xl:h-[43px] 2xl:h-[49px] 3xl:h-[58px] w-[24%]">
+                </div>
+                <div className="flex flex-row items-start justify-between w-[100%]">
+                  <div className="flex flex-row gap-[13px] items-end justify-between w-[auto]">
+                    <div className="h-[48px] md:h-[auto] sm:h-[auto] relative w-[auto]">
                       <Img
                         src="images/img_avatar_19.png"
-                        className="Avatar9"
+                        className="absolute h-[48px] inset-y-[0] left-[0] my-[auto] object-cover rounded-radius12 w-[48px]"
                         alt="Avatar Six"
                       />
-                      <Stack className="absolute xl:h-[11px] 2xl:h-[13px] 3xl:h-[15px] lg:h-[9px] right-[0] top-[0] w-[30%]">
-                        <div className="absolute bg-gray_100 xl:h-[11px] 2xl:h-[13px] 3xl:h-[15px] lg:h-[9px] rounded-radius758 w-[100%]"></div>
-                        <div className="absolute bg-green_400 2xl:h-[11px] 3xl:h-[13px] lg:h-[8px] xl:h-[9px] inset-x-[0] mx-[auto] rounded-radius50 top-[0] 2xl:w-[10px] 3xl:w-[12px] lg:w-[7px] xl:w-[8px]"></div>
-                      </Stack>
-                    </Stack>
-                    <Column className="justify-start mb-[3px] lg:mt-[4px] xl:mt-[6px] 2xl:mt-[7px] 3xl:mt-[8px] w-[70%]">
+                      <div className="absolute h-[12px] md:h-[auto] sm:h-[auto] right-[0] top-[0] w-[30%]">
+                        <div className="bg-gray_100 h-[12px] m-[auto] rounded-radius758 w-[100%]"></div>
+                        <div className="absolute bg-green_400 h-[10px] inset-x-[0] mx-[auto] rounded-radius50 top-[0] w-[10px]"></div>
+                      </div>
+                    </div>
+                    <div className="flex flex-col gap-[5px] items-start justify-start mb-[3px] mt-[7px] w-[auto]">
                       <Text
-                        className="font-medium text-gray_900 w-[auto]"
+                        className="font-medium text-gray_900 text-left w-[auto]"
                         as="h5"
                         variant="h5"
                       >
                         Billy Green
                       </Text>
-                      <Text className="Message" as="h5" variant="h5">
+                      <Text
+                        className="font-normal not-italic text-gray_500 text-left w-[auto]"
+                        as="h5"
+                        variant="h5"
+                      >
                         Thank you for sharing
                       </Text>
-                    </Column>
-                  </Row>
-                  <Column className="items-end justify-start mt-[3px] pl-[3px] pt-[3px] w-[25%]">
-                    <Text className="Right" as="h6" variant="h6">
+                    </div>
+                  </div>
+                  <div className="flex flex-col gap-[6px] items-end justify-start mt-[3px] pl-[3px] pt-[3px] w-[auto]">
+                    <Text
+                      className="font-inter font-normal not-italic text-gray_500 text-left w-[auto]"
+                      as="h6"
+                      variant="h6"
+                    >
                       Oct 26
                     </Text>
                     <Button
-                      className="font-bold font-sfprodisplay lg:mt-[4px] xl:mt-[5px] 2xl:mt-[6px] 3xl:mt-[7px] 2xl:text-[10px] 3xl:text-[12px] lg:text-[7px] xl:text-[8px] text-center tracking-ls1 uppercase w-[20%]"
+                      className="cursor-pointer font-bold font-sfprodisplay text-[10px] text-center text-white_A700 tracking-ls1 uppercase w-[17px]"
                       shape="RoundedBorder4"
                       size="sm"
                       variant="FillRedA200"
                     >
                       1
                     </Button>
-                  </Column>
-                </Row>
-                <Row className="Messages">
-                  <Row className="items-end justify-between w-[59%]">
-                    <Stack className="lg:h-[35px] xl:h-[43px] 2xl:h-[49px] 3xl:h-[58px] w-[24%]">
+                  </div>
+                </div>
+                <div className="flex flex-row items-start justify-between w-[100%]">
+                  <div className="flex flex-row gap-[13px] items-end justify-between w-[auto]">
+                    <div className="h-[48px] md:h-[auto] sm:h-[auto] relative w-[auto]">
                       <Img
                         src="images/img_image_8.png"
-                        className="Avatar9"
+                        className="absolute h-[48px] inset-y-[0] left-[0] my-[auto] object-cover rounded-radius12 w-[48px]"
                         alt="Avatar Seven"
                       />
-                      <Stack className="absolute xl:h-[11px] 2xl:h-[13px] 3xl:h-[15px] lg:h-[9px] right-[0] top-[0] w-[30%]">
-                        <div className="absolute bg-gray_100 xl:h-[11px] 2xl:h-[13px] 3xl:h-[15px] lg:h-[9px] rounded-radius758 w-[100%]"></div>
-                        <div className="absolute bg-green_400 2xl:h-[11px] 3xl:h-[13px] lg:h-[8px] xl:h-[9px] inset-x-[0] mx-[auto] rounded-radius50 top-[0] 2xl:w-[10px] 3xl:w-[12px] lg:w-[7px] xl:w-[8px]"></div>
-                      </Stack>
-                    </Stack>
-                    <Column className="justify-start mb-[3px] lg:mt-[4px] xl:mt-[6px] 2xl:mt-[7px] 3xl:mt-[8px] w-[70%]">
+                      <div className="absolute h-[12px] md:h-[auto] sm:h-[auto] right-[0] top-[0] w-[30%]">
+                        <div className="bg-gray_100 h-[12px] m-[auto] rounded-radius758 w-[100%]"></div>
+                        <div className="absolute bg-green_400 h-[10px] inset-x-[0] mx-[auto] rounded-radius50 top-[0] w-[10px]"></div>
+                      </div>
+                    </div>
+                    <div className="flex flex-col gap-[5px] items-start justify-start mb-[3px] mt-[7px] w-[auto]">
                       <Text
-                        className="font-medium text-gray_900 w-[auto]"
+                        className="font-medium text-gray_900 text-left w-[auto]"
                         as="h5"
                         variant="h5"
                       >
                         Billy Green
                       </Text>
-                      <Text className="Message" as="h5" variant="h5">
+                      <Text
+                        className="font-normal not-italic text-gray_500 text-left w-[auto]"
+                        as="h5"
+                        variant="h5"
+                      >
                         Thank you for sharing
                       </Text>
-                    </Column>
-                  </Row>
-                  <Column className="items-end justify-start mt-[3px] pl-[3px] pt-[3px] w-[25%]">
-                    <Text className="Right" as="h6" variant="h6">
+                    </div>
+                  </div>
+                  <div className="flex flex-col gap-[6px] items-end justify-start mt-[3px] pl-[3px] pt-[3px] w-[auto]">
+                    <Text
+                      className="font-inter font-normal not-italic text-gray_500 text-left w-[auto]"
+                      as="h6"
+                      variant="h6"
+                    >
                       Oct 26
                     </Text>
                     <Button
-                      className="font-bold font-sfprodisplay lg:mt-[4px] xl:mt-[5px] 2xl:mt-[6px] 3xl:mt-[7px] 2xl:text-[10px] 3xl:text-[12px] lg:text-[7px] xl:text-[8px] text-center tracking-ls1 uppercase w-[20%]"
+                      className="cursor-pointer font-bold font-sfprodisplay text-[10px] text-center text-white_A700 tracking-ls1 uppercase w-[17px]"
                       shape="RoundedBorder4"
                       size="sm"
                       variant="FillRedA200"
                     >
                       1
                     </Button>
-                  </Column>
-                </Row>
+                  </div>
+                </div>
               </List>
-            </Column>
-          </Row>
-          <Row className="items-center justify-between w-[56%]">
-            <div className="bg-gray_500_48 xl:h-[114px] 2xl:h-[129px] 3xl:h-[154px] lg:h-[92px] rounded-radius2 w-[1%]"></div>
-            <Column className="bg-white_A700 items-center lg:p-[28px] xl:p-[35px] 2xl:p-[40px] 3xl:p-[48px] rounded-bl-[32px] rounded-br-[0] rounded-tl-[32px] rounded-tr-[0] w-[98%]">
-              <Row className="items-center justify-end ml-[auto] lg:mt-[3px] xl:mt-[4px] 2xl:mt-[5px] 3xl:mt-[6px] w-[16%]">
+            </div>
+          </div>
+          <div className="flex md:flex-1 sm:flex-1 md:flex-col sm:flex-col flex-row gap-[10px] items-center justify-between md:px-[20px] sm:px-[20px] md:w-[100%] sm:w-[100%] w-[auto]">
+            <div className="bg-gray_500_48 h-[128px] md:mt-[0] sm:mt-[0] my-[448px] rounded-radius2 w-[auto]"></div>
+            <div className="bg-white_A700 flex flex-col gap-[291px] md:gap-[40px] sm:gap-[40px] items-center justify-start p-[40px] sm:px-[20px] rounded-bl-[32px] rounded-br-[0] rounded-tl-[32px] rounded-tr-[0] md:w-[100%] sm:w-[100%] w-[auto]">
+              <div className="flex flex-row gap-[20px] items-center justify-end ml-[auto] mt-[5px] md:w-[100%] sm:w-[100%] w-[17%]">
                 <Button
-                  className="font-bold lg:text-[15px] xl:text-[19px] 2xl:text-[22px] 3xl:text-[26px] text-center mail_One1"
+                  className="cursor-pointer font-bold h-[48px] sm:text-[18.32px] md:text-[20.32px] text-[22.32px] text-center text-white_A700 w-[48px]"
                   shape="RoundedBorder12"
-                  size="lg"
+                  size="5xl"
                   variant="FillLightblue200"
                 >
                   1
                 </Button>
                 <Img
                   src="images/img_avatar_48X48.png"
-                  className="Avatar_One"
+                  className="h-[48px] md:h-[auto] sm:h-[auto] object-cover rounded-radius12 w-[48px]"
                   alt="Avatar Eight"
                 />
-              </Row>
-              <Column className="font-inter items-center justify-start lg:mb-[11px] xl:mb-[14px] 2xl:mb-[16px] 3xl:mb-[19px] lg:mt-[206px] xl:mt-[258px] 2xl:mt-[291px] 3xl:mt-[349px] pb-[1px] w-[62%]">
-                <Column className="items-center justify-start w-[100%]">
-                  <Stack className="bg-gray_100 lg:h-[114px] xl:h-[143px] 2xl:h-[161px] 3xl:h-[193px] lg:px-[29px] xl:px-[36px] 2xl:px-[41px] 3xl:px-[49px] rounded-radius501 lg:w-[113px] xl:w-[142px] 2xl:w-[160px] 3xl:w-[192px]">
+              </div>
+              <div className="flex flex-col font-inter gap-[319px] md:gap-[40px] sm:gap-[40px] items-center justify-start mb-[16px] md:w-[100%] sm:w-[100%] w-[62%]">
+                <div className="flex flex-col gap-[22px] items-center justify-start w-[100%]">
+                  <div className="bg-gray_100 h-[160px] md:h-[75px] sm:h-[75px] p-[41px] sm:px-[20px] md:px-[40px] relative rounded-radius501 w-[160px]">
                     <Img
                       src="images/img_mail_75X78.svg"
-                      className="absolute lg:h-[54px] xl:h-[67px] 2xl:h-[76px] 3xl:h-[91px] inset-[0] justify-center m-[auto] w-[49%]"
+                      className="absolute h-[75px] inset-[0] justify-center m-[auto] w-[49%]"
                       alt="mail One"
                     />
-                  </Stack>
-                  <Column className="items-center justify-start lg:mt-[15px] xl:mt-[19px] 2xl:mt-[22px] 3xl:mt-[26px] w-[100%]">
+                  </div>
+                  <div className="flex flex-col gap-[17px] items-center justify-start w-[100%]">
                     <Text
-                      className="text-gray_500 w-[auto]"
+                      className="text-gray_500 text-left w-[auto]"
                       as="h1"
                       variant="h1"
                     >
                       It's nice to chat with someone
                     </Text>
                     <Text
-                      className="font-medium lg:mt-[12px] xl:mt-[15px] 2xl:mt-[17px] 3xl:mt-[20px] text-gray_500 w-[auto]"
+                      className="font-medium text-gray_500 text-left w-[auto]"
                       as="h5"
                       variant="h5"
                     >
                       Pick a person from left menu and start your conversation
                     </Text>
-                  </Column>
-                </Column>
-                <Row className="items-center justify-center lg:mt-[226px] xl:mt-[283px] 2xl:mt-[319px] 3xl:mt-[383px] w-[72%]">
+                  </div>
+                </div>
+                <div className="flex flex-row items-center justify-center md:w-[100%] sm:w-[100%] w-[72%]">
                   <Img
                     src="images/img_download.svg"
-                    className="trash"
+                    className="h-[18px] w-[18px]"
                     alt="download"
                   />
                   <Text
-                    className="font-medium lg:ml-[3px] xl:ml-[4px] 2xl:ml-[5px] 3xl:ml-[6px] text-gray_500 w-[auto]"
+                    className="font-medium ml-[5px] text-gray_500 text-left w-[auto]"
                     as="h5"
                     variant="h5"
                   >
                     Social is available for Mac
                   </Text>
-                  <Text className="Likes" as="h5" variant="h5">
+                  <Text
+                    className="font-medium ml-[5px] text-gray_900 text-left w-[auto]"
+                    as="h5"
+                    variant="h5"
+                  >
                     Download it now
                   </Text>
-                </Row>
-              </Column>
-            </Column>
-          </Row>
-        </Row>
-      </Column>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   );
 };
